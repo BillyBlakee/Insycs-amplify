@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 
 import { styles } from "../styles";
-import { EarthCanvas } from "./canvas";
 
 const Hero = () => {
   return (
@@ -24,8 +23,6 @@ const Hero = () => {
           </p>
         </div>
       </div>
-
-      <EarthCanvas />
 
       <div className="absolute xs:bottom-22 bottom-24 w-full flex justify-center items-center">
         <a href="#about" className="pointer-events-auto">
