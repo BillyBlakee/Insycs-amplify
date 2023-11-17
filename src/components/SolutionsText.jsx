@@ -10,7 +10,7 @@ const SolutionsText = () => {
     return (
       <div style={{ marginBottom: 0 }}>
         <motion.div variants={textVariant()}>
-          <h2 className={styles.sectionHeadText}>Our Solutions</h2>
+          <h2 className={styles.sectionHeadText}>Problems in the Current Environment</h2>
         </motion.div>
   
         <motion.div
@@ -19,43 +19,42 @@ const SolutionsText = () => {
         >
           <div>
             <p className={styles.sectionMidText}>
-              Bespoke AI Solutions, Tailored for Your Success
+              Exorbitant Rise in Insurance Premiums
             </p>
-            At Acuritas AI, we understand that every business is unique. That's
-            why we don't just offer services—we offer solutions. Each AI tool and
-            strategy we deploy is meticulously tailored to meet your specific
-            business goals and challenges.
+            The notable rise in home insurance premiums is primarily driven by several factors, 
+            including the increased frequency and severity of natural disasters, Changes in local risk factors, 
+            and rising rosts of repairs and rebuilding. Local changes in risk factors and regulatory shifts further 
+            contribute to this upward trend in insurance costs. These combined elements lead to higher insurance 
+            payouts, necessitating increased premiums to balance the heightened risk and expenses.
           </div>
   
           <div>
             <p className={styles.sectionMidText}>
-              Expert Guidance Every Step of the Way
+            Carriers Leaving Crisis States
             </p>
-            Navigating the complex landscape of AI technology can be daunting, but
-            you’re not alone. Our dedicated AI specialists work hand-in-hand with
-            you to pinpoint the most impactful applications for your needs. We
-            guide you through the entire process, from initial consultation to
-            seamless integration with your existing IT infrastructure.
+            The withdrawal of insurance carriers from states facing crises, often due to natural disasters, 
+            can have far-reaching implications. This typically occurs when insurers decide that operating 
+            in certain areas is no longer viable or profitable. For residents of these "crisis states," this exodus can 
+            lead to a significant reduction in available insurance options, often resulting in higher premiums due to 
+            decreased competition.
           </div>
   
           <div>
             <p className={styles.sectionMidText}>
-              Ahead of the Curve, So You Don't Have To Be
+            Claims Protracted in Litigation or Unpaid
             </p>
-            AI is an ever-evolving field, but rest assured, we're always one step
-            ahead. We stay up-to-date with the latest advancements, ensuring
-            you're equipped with cutting-edge solutions that propel your business
-            to new heights.
+            When claims are tied up in legal disputes, it often leads to lengthy and costly court proceedings, 
+            delaying the settlement and creating financial strain for claimants awaiting compensation.
+            Unpaid claims, on the other hand, contribute to the overall financial burden on the insurance sector,
+            leading to higher premiums for all policyholders as companies seek to mitigate these risks and losses.
           </div>
   
           <div>
-            <p className={styles.sectionMidText}>Your AI Journey, Simplified</p>
-            You don’t have to worry about choosing the right tools or
-            technologies. We take the guesswork out of the equation. Simply put,
-            our expertise becomes your asset. From state-of-the-art chatbots and
-            content generation systems to AI-enhanced automation tools, we
-            implement solutions that best fit your operations, driving
-            unparalleled efficiency and growth.
+            <p className={styles.sectionMidText}>Scope of Coverage Shrinking</p>
+            As insurers adjust their offerings to manage risks more effectively, many are limiting the breadth of 
+            their coverage. This means that certain risks, once commonly covered, are now excluded or available only 
+            at additional cost. For consumers, this trend results in policies that offer less comprehensive protection, 
+            compelling them to either accept higher risk exposure or purchase supplemental coverage at extra expense.
           </div>
         </motion.div>
       </div>
