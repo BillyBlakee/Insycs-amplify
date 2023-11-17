@@ -13,7 +13,6 @@ const Contact = () => {
     name: '',
     email: '',
     message: '',
-    budget: "$10,000 - $20,000",
   });
   const [loading, setLoading] = useState(false);
 
@@ -51,7 +50,6 @@ const Contact = () => {
         name: "",
         email: "",
         message: "",
-        budget: "",
       });
     }, (error) => {
       setLoading(false);
@@ -110,22 +108,6 @@ const Contact = () => {
               placeholder="How can we help you?"
               className="bg-[#e5e9f0] py-4 px-6 placeholder:text-secondary text-secondary rounded-lg outlined-none border-none font-medium"
             />
-          </label>
-
-          <label className="flex flex-col">
-            <span className="text-secondary font-medium mb-4">What is your budget for this project?</span>
-            <select
-                name="budget"
-                value={form.budget}
-                onChange={handleChange}
-                className="bg-[#e5e9f0] py-4 px-6 text-secondary rounded-lg outlined-none border-none font-medium"
-            >
-                <option value="Less than $5,000">Less than $5,000</option>
-                <option value="$5,000 - $10,000">$5,000 - $10,000</option>
-                <option value="$10,000 - $20,000">$10,000 - $20,000</option>
-                <option value="$20,000 - $40,000">$20,000 - $40,000</option>
-                <option value="$40,000+">$40,000+</option>
-            </select>
           </label>
 
           <button

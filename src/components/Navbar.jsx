@@ -26,7 +26,7 @@ const Navbar = () => {
         >
           <img src={logo} alt='logo' className='w-9 h-9 object-contain' />
           <p className='text-secondary text-[18px] font-bold cursor-pointer'>
-            Acuritas Consulting
+            INSYCS
           </p>
         </Link>
         <ul className='list-none hidden sm:flex flex-row gap-10'>

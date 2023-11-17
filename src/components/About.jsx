@@ -18,7 +18,7 @@ const About = () => {
       variants={fadeIn("", "", 0.1, 1)}
       className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
     >
-    Acuritas AI stands as your comprehensive AI development ally, guiding you from the initial idea to its full-fledged execution and even further. More than just experts in machine learning, we're the dedicated crew that assists both budding startups and established enterprises in crafting state-of-the-art AI tools that enhance productivity and drive expansion. With a blend of technical acumen, financial expertise, and a deep grasp of operational workflows, we provide bespoke solutions like cutting-edge chatbots, content generation systems, and AI-powered automation tools to boost your operational efficiency. Navigating you through every phase, we're committed to helping you forge a groundbreaking product that propels your business to new heights.
+     INSYCS strives to be an insurance campany of the people. We are looking to provide property insurance in states where traditional insurance companies are fleeing due to the inherint natural disaster risks. Insurance rates in many of these states are flying through the roof, and homes are one of the most important assets in everybodys life and need to be protected. We believe everyone should be able to protect their home at a fair price, and are dedicated to making insurance more affordable for all. We ask you to remain patient as we are working with lawmakers to find a solution.
     </motion.p>
    </>
   )

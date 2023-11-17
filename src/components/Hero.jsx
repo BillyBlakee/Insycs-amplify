@@ -15,11 +15,11 @@ const Hero = () => {
 
         <div>
           <h1 className={`${styles.heroHeadText} text-white`}>
-            Acuritas <span className="text-[#74c0fc]">AI</span>
+            INSYCS <span className="text-[#74c0fc]">Insurance</span>
           </h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            Empower Your Business with <br className="sm:block hidden" />
-            Cutting-Edge AI Solutions
+            The insurance company of the people <br className="sm:block hidden" />
+            Providing insurance where it is inaccessible
           </p>
         </div>
       </div>
