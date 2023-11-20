@@ -37,35 +37,33 @@ const testimonials = [
   {
     name: "Jim Seale",
     designation: "TITLE",
-    image: "./Jim.png",
+    image: "./jim.png",
   },
   {
-    name: "Dave",
+    name: "Dave Lugar",
     designation: "Title",
-    image: "./Dylan.png",
-  },
-  /*
-  {
-    name: "Billy Blake
-    designation: "Nobody"
-    image: Billy.png
+    image: "./dave.png",
   },
   {
-    name: "Dylan Duhamel"
-    designation: "Nobody"
-    image: "Dylan.png"
+    name: "Billy Blake",
+    designation: "Nobody",
+    image: "billy.png"
   },
   {
-    name: "Justin Taylor"
-    designation: "Nobody"
-    image: "Jt.png"
+    name: "Dylan Duhamel",
+    designation: "Nobody",
+    image: "dylan.png"
   },
   {
-    name: "Matthew Allen"
-    designation: "Nobody"
-    image: "Matt.png"
+    name: "Justin Taylor",
+    designation: "Nobody",
+    image: "dylan.png"
   },
-  */
+  {
+    name: "Matthew Allen",
+    designation: "Nobody",
+    image: "matt.png"
+  },
   
 ];
 

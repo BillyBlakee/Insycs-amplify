@@ -47,7 +47,7 @@ const Team = () => {
           <h2 className={styles.sectionHeadText}>Meet The Team</h2>
         </motion.div>
       </div>
-      <div className={`-mt-20 pb-14 ${styles.paddingX} flex flex-wrap gap-32 justify-center items-center`}>
+      <div className={`-mt-20 pb-14 ${styles.paddingX} flex flex-wrap gap-24 justify-center items-center`}>
         {testimonials.map((testimonial, index) => (
           <TeamCard key={testimonial.name} index={index} {...testimonial} />
         ))}

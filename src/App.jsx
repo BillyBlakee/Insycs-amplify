@@ -14,9 +14,11 @@ const App = () => {
         <div className="w-full bg-[#010B15] bg-cover">
           <Vision />
         </div>
-        <SolutionsText />
-        <Solutions />
-        <Team />
+        <div className="w-full">
+          <SolutionsText />
+          <Solutions />
+          <Team />
+        </div>
         <div className='bg-[#010b15] relative z-0'>
           <Contact />
         </div>
