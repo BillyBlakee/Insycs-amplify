@@ -1,6 +1,6 @@
 import { BrowserRouter } from "react-router-dom";
 
-import { About, Contact, Team, Solutions, SolutionsText, Hero, Navbar, Vision } from "./components";
+import { About, SavingsTool, Contact, Team, Solutions, SolutionsText, Hero, Navbar, Vision } from "./components";
 
 const App = () => {
   return (
@@ -11,6 +11,7 @@ const App = () => {
           <Hero />
         </div>
         <About />
+        <SavingsTool />
         <div className="w-full bg-[#010B15] bg-cover">
           <Vision />
         </div>

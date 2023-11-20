@@ -24,10 +24,6 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="absolute inset-x-0 bottom-10 flex justify-center items-end h-1/2">
-        <SavingsTool />
-      </div>
-
       <div className="absolute xs:bottom-22 bottom-24 w-full flex justify-center items-center">
         <a href="#about" className="pointer-events-auto">
           <div className="w-[35px] h-[64px] rounded-3xl border-4 border-white opacity-40 flex justify-center items-start p-2">

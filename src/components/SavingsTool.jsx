@@ -2,6 +2,7 @@ import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import emailjs from '@emailjs/browser';
 
+import { SectionWrapper } from "../hoc";
 import { styles } from "../styles";
 import { slideIn } from "../utils/motion";
 
@@ -32,10 +33,10 @@ const SavingsTool = () => {
   }
 
   return (
-    <div className="xl:mt-6 flex-col flex overflow-hidden">
+    <div className="xl:mt-6 flex-col flex overflow-hidden justify-center items-center">
       <motion.div
         variants={slideIn('right', "tween", 0.2, 1)}
-        className="flex-[0.5] bg-white-100 p-4 rounded-2xl"
+        className="flex-[0.75] bg-white-100 p-4 rounded-2xl"
       >
         <h3 className="text-tertiary font-black md:text-[30px] sm:text-[20px] xs:text-[20px] text-[30px]">How much is your insurance company losing you?</h3>
 
@@ -43,7 +44,7 @@ const SavingsTool = () => {
             <form
             ref={formRef}
             onSubmit={handleSubmit}
-            className="flex flex-col gap-8 mr-4" // Adjust width and margin as needed
+            className="flex flex-col gap-8" // Adjust width and margin as needed
             >
             <label className="flex flex-col">
                 <span className="text-secondary font-medium mb-4">Your Insurance Providor</span>
@@ -101,7 +102,7 @@ const SavingsTool = () => {
             </button>
             </form>
 
-            <div className="flex flex-col justify-center"> {/* Adjust alignment as needed */}
+            <div className="flex flex-col justify-center items-center p-32"> {/* Adjust alignment as needed */}
                 <p className="text-secondary">Testing</p>
                 <img
                     src="./dylan.png"
@@ -121,4 +122,4 @@ const SavingsTool = () => {
   )
 }
 
-export default SavingsTool
+export default SectionWrapper(SavingsTool, "savingsTool")
