@@ -4,7 +4,7 @@ import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
 
 const Vision = () => {
-    const text = "Leverage Acuritas's comprehensive AI development expertise to maximize your businesses potential";
+    const text = "Our Mission is to Make Insurance More Affordable for Everyone";
     const words = text.split(' ');
 
     const wordVariants = {
@@ -54,7 +54,7 @@ const Vision = () => {
                 variants={wordVariants} 
                 initial="hidden" 
                 animate={isVisible ? "visible" : "hidden"} 
-                className={`mr-2 ${styles.sectionHeadText} ${word === "AI" || word === "development" ? "text-tertiary" : "text-white"}`}
+                className={`mr-2 ${styles.sectionHeadText} ${word === "More" || word === "Affordable" ? "text-tertiary" : "text-white"}`}
               >
                 {word}
               </motion.span>

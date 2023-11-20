@@ -19,31 +19,54 @@
 
 const solutions = [
   {
-    title: "GPT-3 | GPT-4 Implementation",
-    info: "Language synthesis-Knowledge response-Chatbot development-Model tuning",
+    title: "Creating Partnerships",
+    info: "Creating strategic partnerships-Creating products to benefit different consumers",
   },
   {
-    title: "AI Consulting",
-    info: "Feasibility assessments-Use case identification-Performance evaluation-Strategy development",
+    title: "Innovating Insurance",
+    info: "Bringing never before seen products to the insurance space-Cheaper premiums-Eliminating premiums",
   },
   {
-    title: "Natural Language Processing",
-    info: "Document categorization-Data mining-Text summarization-Entity identification",
+    title: "Title",
+    info: "Subtext",
   },
 ];
 
 
 const testimonials = [
   {
-    name: "Dylan Duhamel",
-    designation: "Lead Technology Engineer",
-    image: "./dylan.png",
+    name: "Jim Seale",
+    designation: "TITLE",
+    image: "./Jim.png",
   },
   {
-    name: "Justin Taylor",
-    designation: "Lead AI Operations Specialist",
-    image: "./jt.png",
+    name: "Dave",
+    designation: "Title",
+    image: "./Dylan.png",
   },
+  /*
+  {
+    name: "Billy Blake
+    designation: "Nobody"
+    image: Billy.png
+  },
+  {
+    name: "Dylan Duhamel"
+    designation: "Nobody"
+    image: "Dylan.png"
+  },
+  {
+    name: "Justin Taylor"
+    designation: "Nobody"
+    image: "Jt.png"
+  },
+  {
+    name: "Matthew Allen"
+    designation: "Nobody"
+    image: "Matt.png"
+  },
+  */
+  
 ];
 
 const projects = [
