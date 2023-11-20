@@ -6,6 +6,7 @@ import Contact from './Contact';
 import Vision from './Vision';
 import Solutions from './Solutions';
 import SolutionsText from './SolutionsText';
+import SavingsTool from './SavingsTool';
 
 export {
   Hero,
@@ -15,5 +16,6 @@ export {
   Contact,
   Vision,
   Solutions,
-  SolutionsText
+  SolutionsText,
+  SavingsTool
 }

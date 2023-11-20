@@ -3,16 +3,16 @@ import { motion } from "framer-motion";
 import emailjs from '@emailjs/browser';
 
 import { styles } from "../styles";
-import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
 
 
-const Contact = () => {
+const SavingsTool = () => {
   const formRef = useRef();
   const [form, setForm] = useState({
-    name: '',
-    email: '',
-    message: '',
+    insuranceCompany: 'Select',
+    monthlyPayment: '',
+    homeValue: '',
+    zipcode: ''
   });
   const [loading, setLoading] = useState(false);
 
@@ -28,46 +28,16 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setLoading(true);
-
-    emailjs.send(
-      'service_clvfl7d',
-      'template_xpwxebr',
-      {
-        from_name: form.name,
-        to_name: 'Acuritas',
-        from_email: form.email,
-        to_email: 'team@acuritasconsulting.com',
-        message: `${form.message} [We would like a budget range of ${form.budget}]`,
-      },
-      'rpK1cWylxbDtu_SY-'
-    )
-    .then(() => {
-      setLoading(false);
-      alert('Thank you. We will get back to you as soon as possible.');
-
-      setForm({
-        name: "",
-        email: "",
-        message: "",
-      });
-    }, (error) => {
-      setLoading(false);
-
-      console.log("Error");
-
-      alert('Something went wrong. Please contact team@acuritasconsulting.com');
-    })
+    console.log(form.insuranceCompany);
   }
 
   return (
     <div className="xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">
       <motion.div
-        variants={slideIn('left', "tween", 0.2, 1)}
+        variants={slideIn('right', "tween", 0.2, 1)}
         className="flex-[0.75] bg-white-100 p-8 rounded-2xl"
       >
-        <p className={styles.sectionSubText}>Get in touch</p>
-        <h3 className={styles.sectionHeadText}>Contact</h3>
+        <h3 className="text-tertiary font-black md:text-[30px] sm:text-[20px] xs:text-[20px] text-[30px]">How much is your insurance company losing you?</h3>
 
         <form
           ref={formRef}
@@ -75,37 +45,49 @@ const Contact = () => {
           className="mt-12 flex flex-col gap-8"
         >
           <label className="flex flex-col">
-            <span className="text-secondary font-medium mb-4">Your Name</span>
+            <span className="text-secondary font-medium mb-4">Your Insurance Providor</span>
             <input
               type="text"
-              name="name"
-              value={form.name}
+              name="insuranceCompany"
+              value={form.insuranceCompany}
               onChange={handleChange}
-              placeholder="What's your name?"
+              placeholder="What's your insurance providor?"
               className="bg-[#e5e9f0] py-4 px-6 placeholder:text-secondary text-secondary rounded-lg outlined-none border-none font-medium"
             />
           </label>
 
           <label className="flex flex-col">
-            <span className="text-secondary font-medium mb-4">Your Email</span>
+            <span className="text-secondary font-medium mb-4">Your Monthly Payment</span>
             <input
-              type="email"
-              name="email"
-              value={form.email}
+              type="text"
+              name="monthlyPayment"
+              value={form.monthlyPayment}
               onChange={handleChange}
-              placeholder="What's your email?"
+              placeholder="What's your monthly payment?"
               className="bg-[#e5e9f0] py-4 px-6 placeholder:text-secondary text-secondary rounded-lg outlined-none border-none font-medium"
             />
           </label>
 
           <label className="flex flex-col">
-            <span className="text-secondary font-medium mb-4">Your Message</span>
-            <textarea
-              rows="7"
-              name="message"
-              value={form.message}
+            <span className="text-secondary font-medium mb-4">Your Home Value</span>
+            <input
+              type="text"
+              name="homeValue"
+              value={form.homeValue}
               onChange={handleChange}
-              placeholder="How can we help you?"
+              placeholder="What's your home value?"
+              className="bg-[#e5e9f0] py-4 px-6 placeholder:text-secondary text-secondary rounded-lg outlined-none border-none font-medium"
+            />
+          </label>
+
+          <label className="flex flex-col">
+            <span className="text-secondary font-medium mb-4">Your Zipcode</span>
+            <textarea
+              type="text"
+              name="zipcode"
+              value={form.zipcode}
+              onChange={handleChange}
+              placeholder="What's your zipcode?"
               className="bg-[#e5e9f0] py-4 px-6 placeholder:text-secondary text-secondary rounded-lg outlined-none border-none font-medium"
             />
           </label>
@@ -128,4 +110,4 @@ const Contact = () => {
   )
 }
 
-export default Contact
+export default SavingsTool

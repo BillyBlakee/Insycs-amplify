@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-
+import SavingsTool from "./SavingsTool";
 import { styles } from "../styles";
 
 const Hero = () => {
@@ -23,6 +23,8 @@ const Hero = () => {
           </p>
         </div>
       </div>
+
+      <SavingsTool />
 
       <div className="absolute xs:bottom-22 bottom-24 w-full flex justify-center items-center">
         <a href="#about" className="pointer-events-auto">
