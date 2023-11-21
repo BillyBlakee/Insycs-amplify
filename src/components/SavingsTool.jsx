@@ -36,9 +36,9 @@ const SavingsTool = () => {
     <div className="xl:mt-6 flex-col flex overflow-hidden justify-center items-center">
       <motion.div
         variants={slideIn('right', "tween", 0.2, 1)}
-        className="flex-[0.75] bg-white-100 p-4 rounded-2xl"
+        className="flex-[0.75] bg-[#ccdaed] p-4 rounded-2xl"
       >
-        <h3 className="text-tertiary font-black md:text-[30px] sm:text-[20px] xs:text-[20px] text-[30px]">How much is your insurance company losing you?</h3>
+        <h3 className="p-5 text-center text-tertiary font-black md:text-[30px] sm:text-[20px] xs:text-[20px] text-[30px]">How much is your insurance company losing you?</h3>
 
         <div className="flex-row flex">
             <form
@@ -48,14 +48,18 @@ const SavingsTool = () => {
             >
             <label className="flex flex-col">
                 <span className="text-secondary font-medium mb-4">Your Insurance Providor</span>
-                <input
-                type="text"
-                name="insuranceCompany"
-                value={form.insuranceCompany}
-                onChange={handleChange}
-                placeholder="What's your insurance providor?"
-                className="bg-[#e5e9f0] py-4 px-6 placeholder:text-secondary text-secondary rounded-lg outlined-none border-none font-medium"
-                />
+                <select
+                  name="budget"
+                  value={form.insuranceCompany}
+                  onChange={handleChange}
+                  className="bg-[#e5e9f0] py-4 px-6 text-secondary rounded-lg outlined-none border-none font-medium"
+                >
+                  <option value="Allstate">Allstate</option>
+                  <option value="Nationwide">Nationwide</option>
+                  <option value="State Farm">State Farm</option>
+                  <option value="USAA">USAA</option>
+                  <option value="Farmers">Farmers</option>
+                </select>
             </label>
 
             <label className="flex flex-col">
