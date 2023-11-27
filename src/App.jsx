@@ -5,10 +5,17 @@ import { About, SavingsTool, Contact, Team, Solutions, SolutionsText, Hero, Navb
 const App = () => {
   return (
     <BrowserRouter>
-      <div className='relative z-0 bg-primary'>
-        <div className='bg-hero-pattern relative bg-cover bg-no-repeat bg-center'>
-          <Navbar />
-          <Hero />
+      <div className="relative z-0 bg-primary">
+        {/* Outer Container for Hero Section */}
+        <div
+          style={{ height: "80vh" }}
+          className="relative bg-no-repeat bg-center"
+        >
+          {/* Background Image Container */}
+          <div className="bg-hero-pattern bg-cover" style={{ height: "100%" }}>
+            <Navbar />
+            <Hero />
+          </div>
         </div>
         <About />
         <SavingsTool />
@@ -20,12 +27,13 @@ const App = () => {
           <Solutions />
           <Team />
         </div>
-        <div className='bg-[#010b15] relative z-0'>
+        <div className="bg-[#010b15] relative z-0">
           <Contact />
         </div>
       </div>
     </BrowserRouter>
   );
-}
+};
+
 
 export default App;

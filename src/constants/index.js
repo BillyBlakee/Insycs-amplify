@@ -37,34 +37,33 @@ const testimonials = [
   {
     name: "Jim Seale",
     designation: "TITLE",
-    image: "./jim.png",
+    image: "./images/jim.png",
   },
   {
     name: "Dave Lugar",
     designation: "Title",
-    image: "./dave.png",
+    image: "./images/dave.png",
   },
   {
     name: "Billy Blake",
     designation: "Nobody",
-    image: "billy.png"
+    image: "./images/billy.png",
   },
   {
     name: "Dylan Duhamel",
     designation: "Nobody",
-    image: "dylan.png"
+    image: "./images/dylan.png",
   },
   {
     name: "Justin Taylor",
     designation: "Nobody",
-    image: "dylan.png"
+    image: "./images/dylan.png",
   },
   {
     name: "Matthew Allen",
     designation: "Nobody",
-    image: "matt.png"
+    image: "./images/matt.png",
   },
-  
 ];
 
 const projects = [

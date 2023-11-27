@@ -13,6 +13,32 @@
   color-scheme: dark;
 }
 
+.animated-background {
+    /* Tailwind classes for base styling */
+    @apply relative overflow-hidden;
+
+    /* Custom styles for slanted shape */
+    transform: skewY(-10deg);
+    transform-origin: 0;
+}
+
+.background-animation {
+    /* Full size and positioning */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    /* Gradients and blur */
+    background: linear-gradient(45deg, #6ee7b7, #3b82f6, #9333ea, #f43f5e);
+    filter: blur(80px);
+
+    /* Initial position for animation */
+    transform: translateX(-50%);
+}
+
+
 .hash-span {
   margin-top: -100px;
   padding-bottom: 100px;

@@ -13,7 +13,7 @@ const TeamCard = ({
   image,
 }) => (
   <motion.div
-    variants={fadeIn("", "spring", index * 0.5, 0.75)}
+    variants={fadeIn("", "spring", index * 0.45, 0.75)}
     className='bg-[#010B15] p-10 rounded-3xl xs:w-[320px] w-full'
   >
     <div className='mt-1'>
