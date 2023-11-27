@@ -22,7 +22,7 @@ const SolutionsText = () => {
               Exorbitant Rise in Insurance Premiums
             </p>
             The notable rise in home insurance premiums is primarily driven by several factors, 
-            including the increased frequency and severity of natural disasters, Changes in local risk factors, 
+            including the increased frequency and severity of natural disasters, changes in local risk factors, 
             and rising rosts of repairs and rebuilding. Local changes in risk factors and regulatory shifts further 
             contribute to this upward trend in insurance costs. These combined elements lead to higher insurance 
             payouts, necessitating increased premiums to balance the heightened risk and expenses.

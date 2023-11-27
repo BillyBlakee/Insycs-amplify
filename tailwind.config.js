@@ -6,15 +6,15 @@ module.exports = {
     extend: {
       colors: {
         primary: "#F7F7F7",
-        secondary: "#003366",
-        tertiary: "#72A0C1",
+        secondary: "#000000",
+        tertiary: "#DD390D",
         "black-100": "#100d25",
         "black-200": "#090325",
         "white-100": "#f3f3f3",
         "hero-gradient": "#74c0fc",
       },
       boxShadow: {
-        card: "0px 35px 120px -15px #211e35",
+        card: "0px 35px 120px -15px #0087F6",
       },
       screens: {
         xs: "450px",
