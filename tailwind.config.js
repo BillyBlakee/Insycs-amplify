@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#F7F7F7",
+        primary: "#fbfaf8",
         secondary: "#000000",
         tertiary: "#DD390D",
         "black-100": "#100d25",
@@ -14,7 +14,7 @@ module.exports = {
         "hero-gradient": "#74c0fc",
       },
       boxShadow: {
-        card: "0px 35px 120px -15px #0087F6",
+        card: "0px 35px 120px -15px #dc3c0c",
       },
       screens: {
         xs: "450px",

@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import { motion } from "framer-motion";
-import emailjs from '@emailjs/browser';
+import Graph from "./Graph";
 
 import { SectionWrapper } from "../hoc";
 import { styles } from "../styles";
@@ -33,7 +33,7 @@ const SavingsTool = () => {
   }
 
   return (
-    <div className="xl:mt-6 flex-col flex overflow-hidden justify-center items-center">
+    <div className="mb-6 flex-col flex overflow-hidden justify-center items-center">
       <motion.div
         variants={slideIn('right', "tween", 0.2, 1)}
         className="flex-[0.75] bg-[#ccdaed] p-4 rounded-2xl"
@@ -106,13 +106,9 @@ const SavingsTool = () => {
             </button>
             </form>
 
-            <div className="flex flex-col justify-center items-center p-32"> {/* Adjust alignment as needed */}
-                <p className="text-secondary">Testing</p>
-                <img
-                    src="./dylan.png"
-                    alt={`Picture of Dylan`}
-                    className='w-60 h-60 rounded-full object-cover'
-                />
+            {/* Display the graph here */}
+            <div className="flex flex-col justify-center items-center p-10"> 
+                <Graph />
             </div>
         </div>
       </motion.div>
