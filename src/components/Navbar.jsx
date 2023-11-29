@@ -11,7 +11,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`${styles.paddingX} w-full flex items-center py-2 fixed top-0 z-50 bg-primary`}
+      className={`${styles.paddingX} w-full flex items-center py-2 fixed top-0 z-50 bg-background`}
     >
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
         <Link
@@ -29,7 +29,7 @@ const Navbar = () => {
             <li
               key={Link.id}
               className={`${
-                active === Link.title ? "text-tertiary" : "text-secondary"
+                active === Link.title ? "text-tertiary" : "text-text-color"
               } hover:text-black text-[18px] font-medium cursor-pointer`}
               onClick={() => setActive(Link.title)}
             >

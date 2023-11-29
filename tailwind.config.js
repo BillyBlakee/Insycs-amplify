@@ -5,9 +5,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#fbfaf8",
-        secondary: "#222222", // this us used for text color
-        tertiary: "#DD390D",
+        primary: "#0585F4",
+        secondary: "#F5F3AA",
+        tertiary: "#DC3C0C",
+        background: "#ebf5ff",
+        "primary-complement": "#4E7FB4",
+        "tertiary-complement": "#F68E47",
+        "text-color": "#222222",
+        "text-color-light": "#f3f4f6",
         "black-100": "#100d25",
         "black-200": "#090325",
         "white-100": "#f3f3f3",

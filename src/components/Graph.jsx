@@ -29,12 +29,12 @@ const Graph = () => {
         label: "# of Votes",
         data: [12, 19, 3, 5, 2, 3],
         backgroundColor: [
-          "rgba(255, 99, 132, 0.2)",
-          "rgba(54, 162, 235, 0.2)",
-          "rgba(255, 206, 86, 0.2)",
-          "rgba(75, 192, 192, 0.2)",
-          "rgba(153, 102, 255, 0.2)",
-          "rgba(255, 159, 64, 0.2)",
+          "rgba(255, 99, 132, 0.8)",
+          "rgba(54, 162, 235, 0.8)",
+          "rgba(255, 206, 86, 0.8)",
+          "rgba(75, 192, 192, 0.8)",
+          "rgba(153, 102, 255, 0.8)",
+          "rgba(255, 159, 64, 0.8)",
         ],
         borderColor: [
           "rgba(255, 99, 132, 1)",
@@ -53,32 +53,32 @@ const Graph = () => {
     scales: {
       x: {
         grid: {
-          color: "rgba(255, 255, 255, 0.1)", // Lighter grid lines for the x-axis
+          color: "rgba(22, 22, 22, 0.1)", // Lighter grid lines for the x-axis
         },
         ticks: {
-          color: "rgba(255, 255, 255, 0.8)", // Lighter text color for the x-axis labels
+          color: "rgba(22, 22, 22, 0.8)", // Lighter text color for the x-axis labels
         },
       },
       y: {
         beginAtZero: true,
         grid: {
-          color: "rgba(255, 255, 255, 0.1)", // Lighter grid lines for the y-axis
+          color: "rgba(22, 22, 22, 0.1)", // Lighter grid lines for the y-axis
         },
         ticks: {
-          color: "rgba(255, 255, 255, 0.8)", // Lighter text color for the y-axis labels
+          color: "rgba(22, 22, 22, 0.8)", // Lighter text color for the y-axis labels
         },
       },
     },
     plugins: {
       legend: {
         labels: {
-          color: "rgba(255, 255, 255, 0.8)", // Lighter text color for the legend
+          color: "rgba(22, 22, 22, 0.8)", // Lighter text color for the legend
         },
       },
       title: {
         display: true,
         text: "Insurance Breakdown",
-        color: "rgba(255, 255, 255, 0.8)", // Lighter text color for the title
+        color: "rgba(22, 22, 22, 0.8)", // Lighter text color for the title
       },
     },
   };
@@ -86,8 +86,8 @@ const Graph = () => {
 
   return (
     <div
-      className={`bg-[#bcc0d2] rounded-2xl sm:px-16 px-3 sm:py-16 min-h-[300px]`}
-      style={{ width: "600px", height: "400px" }}
+      className={`bg-[#bbcee2] rounded-2xl sm:px-16 px-3 sm:py-16 min-h-[300px]`}
+      style={{ width: "700px", height: "400px" }}
     >
       <Bar data={data} options={options} />
     </div>

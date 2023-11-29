@@ -33,87 +33,101 @@ const SavingsTool = () => {
   }
 
   return (
-    <div className="mb-6 flex-col flex overflow-hidden justify-center items-center">
+    <div className="mt-12 bg-primary-complement rounded-[20px]">
       <motion.div
-        variants={slideIn('right', "tween", 0.2, 1)}
-        className="flex-[0.75] bg-[#ccdaed] p-4 rounded-2xl"
+        variants={slideIn("right", "tween", 0.2, 1)}
+        className="flex-[0.75] bg-primary-complement rounded-2xl"
       >
-        <h3 className="p-5 text-center text-tertiary font-black md:text-[30px] sm:text-[20px] xs:text-[20px] text-[30px]">How much is your insurance company losing you?</h3>
+        <div
+          className={`bg-[#e5e9f0] rounded-2xl ${styles.padding} min-h-[300px]`}
+        >
+          <h3 className="text-center text-tertiary font-black text-[40px] md:text-[50px] sm:text-[20px] xs:text-[20px]">
+            How much is your insurance company <br /> losing you?
+          </h3>
+        </div>
 
         <div className="px-10 py-3 flex-row flex">
-            <form
+          <form
             ref={formRef}
             onSubmit={handleSubmit}
             className="flex flex-col gap-8" // Adjust width and margin as needed
-            >
+          >
             <label className="flex flex-col">
-                <span className="text-secondary font-medium mb-4">Your Insurance Providor</span>
-                <select
-                  name="budget"
-                  value={form.insuranceCompany}
-                  onChange={handleChange}
-                  className="bg-[#e5e9f0] py-4 px-6 text-secondary rounded-lg outlined-none border-none font-medium"
-                >
-                  <option value="Allstate">Allstate</option>
-                  <option value="Nationwide">Nationwide</option>
-                  <option value="State Farm">State Farm</option>
-                  <option value="USAA">USAA</option>
-                  <option value="Farmers">Farmers</option>
-                </select>
+              <span className="text-text-color-light font-medium mb-4">
+                Your Insurance Providor
+              </span>
+              <select
+                name="budget"
+                value={form.insuranceCompany}
+                onChange={handleChange}
+                className="bg-[#e5e9f0] py-4 px-6 text-text-color rounded-lg outlined-none border-none font-medium"
+              >
+                <option value="Allstate">Allstate</option>
+                <option value="Nationwide">Nationwide</option>
+                <option value="State Farm">State Farm</option>
+                <option value="USAA">USAA</option>
+                <option value="Farmers">Farmers</option>
+              </select>
             </label>
 
             <label className="flex flex-col">
-                <span className="text-secondary font-medium mb-4">Your Monthly Payment</span>
-                <input
+              <span className="text-text-color-light font-medium mb-4">
+                Your Monthly Payment
+              </span>
+              <input
                 type="text"
                 name="monthlyPayment"
                 value={form.monthlyPayment}
                 onChange={handleChange}
                 placeholder="What's your monthly payment?"
-                className="bg-[#e5e9f0] py-4 px-6 placeholder:text-secondary text-secondary rounded-lg outlined-none border-none font-medium"
-                />
+                className="bg-[#e5e9f0] py-4 px-6 placeholder:text-text-color text-text-color rounded-lg outlined-none border-none font-medium"
+              />
             </label>
 
             <label className="flex flex-col">
-                <span className="text-secondary font-medium mb-4">Your Home Value</span>
-                <input
+              <span className="text-text-color-light font-medium mb-4">
+                Your Home Value
+              </span>
+              <input
                 type="text"
                 name="homeValue"
                 value={form.homeValue}
                 onChange={handleChange}
                 placeholder="What's your home value?"
-                className="bg-[#e5e9f0] py-4 px-6 placeholder:text-secondary text-secondary rounded-lg outlined-none border-none font-medium"
-                />
+                className="bg-[#e5e9f0] py-4 px-6 placeholder:text-text-color text-text-color rounded-lg outlined-none border-none font-medium"
+              />
             </label>
 
             <label className="flex flex-col">
-                <span className="text-secondary font-medium mb-4">Your Zipcode</span>
-                <input
+              <span className="text-text-color-light font-medium mb-4">
+                Your Zipcode
+              </span>
+              <input
                 type="text"
                 name="zipcode"
                 value={form.zipcode}
                 onChange={handleChange}
                 placeholder="What's your zipcode?"
-                className="bg-[#e5e9f0] py-4 px-6 placeholder:text-secondary text-secondary rounded-lg outlined-none border-none font-medium"
-                />
+                className="bg-[#e5e9f0] py-4 px-6 placeholder:text-text-color text-text-color rounded-lg outlined-none border-none font-medium"
+              />
             </label>
 
             <button
-                type="submit"  
-                className="bg-tertiary py-4 px-8 outline-none w-fit text-white font-bold shadow-md shadow-secondary rounded-xl"
+              type="submit"
+              className="bg-tertiary py-4 px-8 outline-none w-fit text-white font-bold shadow-md shadow-tertiary-complement rounded-xl"
             >
-                {loading ? 'Calculating...' : 'Calculate'}
+              {loading ? "Calculating..." : "Calculate"}
             </button>
-            </form>
+          </form>
 
-            {/* Display the graph here */}
-            <div className="flex flex-col justify-center items-center p-10"> 
-                <Graph />
-            </div>
+          {/* Display the graph here */}
+          <div className="flex w-full flex-col justify-center items-center p-5">
+            <Graph />
+          </div>
         </div>
       </motion.div>
     </div>
-  )
+  );
 }
 
 export default SectionWrapper(SavingsTool, "savingsTool")

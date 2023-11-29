@@ -38,10 +38,10 @@ const Hero = () => {
             Providing insurance where it is inaccessible
           </p>
           <div className="mt-8 flex items-center justify-center sm:justify-start sm:space-x-8">
-            <button className="bg-tertiary py-3 px-8 outline-none w-fit text-white font-bold shadow-md shadow-secondary rounded-xl">
+            <button className="bg-tertiary py-3 px-8 outline-none w-fit text-white font-bold shadow-md shadow-tertiary-complement rounded-xl">
               Get Started
             </button>
-            <button className="bg-tertiary py-3 px-8 outline-none w-fit text-white font-bold shadow-md shadow-secondary rounded-xl">
+            <button className="bg-tertiary py-3 px-8 outline-none w-fit text-white font-bold shadow-md shadow-tertiary-complement rounded-xl">
               Learn More
             </button>
           </div>

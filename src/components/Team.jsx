@@ -38,7 +38,7 @@ const TeamCard = ({
 
 const Team = () => {
   return (
-    <div className={`mt-12 bg-[#2e3440] rounded-[20px]`}>
+    <div className={`mt-12 bg-primary-complement rounded-[20px]`}>
       <div
         className={`bg-[#e5e9f0] rounded-2xl ${styles.padding} min-h-[300px]`}
       >

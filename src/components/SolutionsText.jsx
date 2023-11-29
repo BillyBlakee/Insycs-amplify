@@ -15,7 +15,7 @@ const SolutionsText = () => {
   
         <motion.div
           variants={fadeIn("", "", 0.1, 1)}
-          className="mt-4 text-secondary text-[17px] leading-[30px] grid grid-cols-2 gap-8"
+          className="mt-4 text-text-color text-[17px] leading-[30px] grid grid-cols-2 gap-8"
         >
           <div>
             <p className={styles.sectionMidText}>

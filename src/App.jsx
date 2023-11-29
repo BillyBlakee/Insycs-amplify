@@ -5,7 +5,7 @@ import { About, SavingsTool, Contact, Team, Solutions, SolutionsText, Hero, Navb
 const App = () => {
   return (
     <BrowserRouter>
-      <div className="relative z-0 bg-primary">
+      <div className="relative z-0 bg-background">
         {/* Outer Container for Hero Section */}
         <div
           style={{ height: "80vh" }}
@@ -17,8 +17,10 @@ const App = () => {
             <Hero />
           </div>
         </div>
-        <About />
-        <SavingsTool />
+        <div className="w-full">
+          <About />
+          <SavingsTool />
+        </div>
         <div className="w-full bg-[#010B15] bg-cover">
           <Vision />
         </div>
@@ -27,7 +29,7 @@ const App = () => {
           <Solutions />
           <Team />
         </div>
-        <div className="bg-[#010b15] relative z-0">
+        <div className="bg-primary-complement relative z-0">
           <Contact />
         </div>
       </div>
