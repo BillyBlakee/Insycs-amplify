@@ -51,16 +51,43 @@ const Graph = () => {
 
   const options = {
     scales: {
+      x: {
+        grid: {
+          color: "rgba(255, 255, 255, 0.1)", // Lighter grid lines for the x-axis
+        },
+        ticks: {
+          color: "rgba(255, 255, 255, 0.8)", // Lighter text color for the x-axis labels
+        },
+      },
       y: {
         beginAtZero: true,
+        grid: {
+          color: "rgba(255, 255, 255, 0.1)", // Lighter grid lines for the y-axis
+        },
+        ticks: {
+          color: "rgba(255, 255, 255, 0.8)", // Lighter text color for the y-axis labels
+        },
+      },
+    },
+    plugins: {
+      legend: {
+        labels: {
+          color: "rgba(255, 255, 255, 0.8)", // Lighter text color for the legend
+        },
+      },
+      title: {
+        display: true,
+        text: "Insurance Breakdown",
+        color: "rgba(255, 255, 255, 0.8)", // Lighter text color for the title
       },
     },
   };
 
+
   return (
     <div
-      className={`bg-[#303444] rounded-2xl sm:px-16 px-3 sm:py-16 py-3 min-h-[300px]`}
-      style={{ width: "500px", height: "300px" }}
+      className={`bg-[#bcc0d2] rounded-2xl sm:px-16 px-3 sm:py-16 min-h-[300px]`}
+      style={{ width: "600px", height: "400px" }}
     >
       <Bar data={data} options={options} />
     </div>

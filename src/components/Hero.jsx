@@ -18,7 +18,7 @@ const Hero = () => {
   return (
     <section className="relative w-full h-screen mx-auto">
       <motion.div
-        className={`sm:px-16 px-6 absolute inset-0 top-[230px] max-w-7xl mx-auto flex flex-row items-start gap-5 z-10 pointer-events-none`}
+        className={`sm:px-16 px-6 absolute inset-0 top-[220px] max-w-7xl mx-auto flex flex-row items-start gap-5 z-10 pointer-events-none`}
         initial="hidden"
         animate="visible"
         variants={div1Variants}
@@ -49,7 +49,7 @@ const Hero = () => {
 
         {/* Div 2 */}
         <div className="md:max-w-[50%]">
-          <img src="./images/amico.svg" alt="hero" />
+          <img src="public/images/house2.png" alt="hero" />
         </div>
       </motion.div>
     </section>

@@ -75,6 +75,10 @@
   background: -webkit-linear-gradient(-90.13deg, #0087f6 1.9%, #dd390d 97.5%);
 }
 
+.blue-white-gradient {
+  background: linear-gradient(90.13deg, rgb(251, 250, 248), rgba(116, 192, 252, 0.7));
+}
+
 .orange-text-gradient {
   background: #f12711; /* fallback for old browsers */
   background: -webkit-linear-gradient(

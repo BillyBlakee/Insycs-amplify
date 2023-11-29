@@ -40,7 +40,7 @@ const SavingsTool = () => {
       >
         <h3 className="p-5 text-center text-tertiary font-black md:text-[30px] sm:text-[20px] xs:text-[20px] text-[30px]">How much is your insurance company losing you?</h3>
 
-        <div className="flex-row flex">
+        <div className="px-10 py-3 flex-row flex">
             <form
             ref={formRef}
             onSubmit={handleSubmit}
@@ -100,9 +100,9 @@ const SavingsTool = () => {
 
             <button
                 type="submit"  
-                className="bg-tertiary py-3 px-8 outline-none w-fit text-white font-bold shadow-md shadow-secondary rounded-xl"
+                className="bg-tertiary py-4 px-8 outline-none w-fit text-white font-bold shadow-md shadow-secondary rounded-xl"
             >
-                {loading ? 'Sending...' : 'Send'}
+                {loading ? 'Calculating...' : 'Calculate'}
             </button>
             </form>
 
@@ -111,12 +111,6 @@ const SavingsTool = () => {
                 <Graph />
             </div>
         </div>
-      </motion.div>
-
-      <motion.div
-        variants={slideIn('right', "tween", 0.2, 1)}
-        className="xl:flex-[0.5] xl:h-auto md:h-[350px] h-[250px]"
-      >
       </motion.div>
     </div>
   )
