@@ -1,32 +1,14 @@
 import React from "react";
-import { styles } from "../styles";
-import { Bar } from "react-chartjs-2";
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend,
-} from "chart.js";
+import { Pie } from "react-chartjs-2";
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend
-);
-
+ChartJS.register(ArcElement, Tooltip, Legend);
 
 const Graph = () => {
   const data = {
     labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
     datasets: [
       {
-        label: "# of Votes",
         data: [12, 19, 3, 5, 2, 3],
         backgroundColor: [
           "rgba(255, 99, 132, 0.8)",
@@ -50,46 +32,26 @@ const Graph = () => {
   };
 
   const options = {
-    scales: {
-      x: {
-        grid: {
-          color: "rgba(22, 22, 22, 0.1)", // Lighter grid lines for the x-axis
-        },
-        ticks: {
-          color: "rgba(22, 22, 22, 0.8)", // Lighter text color for the x-axis labels
-        },
-      },
-      y: {
-        beginAtZero: true,
-        grid: {
-          color: "rgba(22, 22, 22, 0.1)", // Lighter grid lines for the y-axis
-        },
-        ticks: {
-          color: "rgba(22, 22, 22, 0.8)", // Lighter text color for the y-axis labels
-        },
-      },
-    },
     plugins: {
       legend: {
         labels: {
-          color: "rgba(22, 22, 22, 0.8)", // Lighter text color for the legend
+          color: "rgba(22, 22, 22, 0.8)", // Text color for the legend
         },
       },
       title: {
         display: true,
         text: "Insurance Breakdown",
-        color: "rgba(22, 22, 22, 0.8)", // Lighter text color for the title
+        color: "rgba(22, 22, 22, 0.8)", // Text color for the title
       },
     },
   };
 
-
   return (
     <div
       className={`bg-[#bbcee2] rounded-2xl sm:px-16 px-3 sm:py-16 min-h-[300px]`}
-      style={{ width: "700px", height: "400px" }}
+      style={{ width: "500px", height: "500px" }}
     >
-      <Bar data={data} options={options} />
+      <Pie data={data} options={options} />
     </div>
   );
 };

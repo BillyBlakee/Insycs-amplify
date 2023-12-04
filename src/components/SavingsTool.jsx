@@ -1,21 +1,23 @@
 import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import Graph from "./Graph";
+import Alert from "./Alert"
 
 import { SectionWrapper } from "../hoc";
 import { styles } from "../styles";
 import { slideIn } from "../utils/motion";
 
-
 const SavingsTool = () => {
   const formRef = useRef();
   const [form, setForm] = useState({
-    insuranceCompany: 'Select',
-    monthlyPayment: '',
-    homeValue: '',
-    zipcode: ''
+    insuranceCompany: "Select",
+    monthlyPayment: "",
+    homeValue: "",
+    zipcode: "",
   });
   const [loading, setLoading] = useState(false);
+  const [showError, setShowError] = useState(false);
+  const [alertMsg, setAlertMsg] = useState("");
 
   const handleChange = (e) => {
     const { target } = e;
@@ -29,19 +31,35 @@ const SavingsTool = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
+    if (form.insuranceCompany == "Select") {
+      console.log("You must choose an insurance providor. Please try again.");
+      setShowError(true);
+    }
+
     console.log(form.insuranceCompany);
-  }
+  };
 
   return (
-    <div className="mt-12 bg-primary-complement rounded-[20px]">
+    <div className="relative">
+      {" "}
+      {/* Relative positioned container */}
+      <div
+        className="absolute inset-0 flex justify-center items-center z-10"
+        style={{ display: showError ? "flex" : "none" }}
+      >
+        <Alert
+          type="error"
+          msg={"You must provide an insurance provider."}
+          onClose={() => setShowError(false)}
+        />
+      </div>
       <motion.div
         variants={slideIn("right", "tween", 0.2, 1)}
         className="flex-[0.75] bg-primary-complement rounded-2xl"
       >
-        <div
-          className={`bg-[#e5e9f0] rounded-2xl ${styles.padding} min-h-[300px]`}
-        >
-          <h3 className="text-center text-tertiary font-black text-[40px] md:text-[50px] sm:text-[20px] xs:text-[20px]">
+        <div className={`bg-[#e5e9f0] rounded-2xl ${styles.padding}`}>
+          <h3 className="text-center text-tertiary font-black text-[40px] md:text-[40px] sm:text-[20px] xs:text-[20px]">
             How much is your insurance company <br /> losing you?
           </h3>
         </div>
@@ -57,11 +75,12 @@ const SavingsTool = () => {
                 Your Insurance Providor
               </span>
               <select
-                name="budget"
+                name="insuranceCompany"
                 value={form.insuranceCompany}
                 onChange={handleChange}
-                className="bg-[#e5e9f0] py-4 px-6 text-text-color rounded-lg outlined-none border-none font-medium"
+                className="bg-[#e5e9f0] py-4 px-6 text-text-color rounded-lg outlined-none border-none font-medium select-hide-arrow"
               >
+                <option value="Select">Select</option>
                 <option value="Allstate">Allstate</option>
                 <option value="Nationwide">Nationwide</option>
                 <option value="State Farm">State Farm</option>
@@ -128,6 +147,6 @@ const SavingsTool = () => {
       </motion.div>
     </div>
   );
-}
+};
 
-export default SectionWrapper(SavingsTool, "savingsTool")
+export default SectionWrapper(SavingsTool, "savingsTool");

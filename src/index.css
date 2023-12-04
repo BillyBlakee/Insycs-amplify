@@ -13,6 +13,17 @@
   color-scheme: dark;
 }
 
+.select-hide-arrow {
+  -webkit-appearance: none;  /* For Chrome, Safari */
+  -moz-appearance: none;     /* For Firefox */
+  appearance: none;         /* Standard syntax */
+  background-image: url('public/images/caret-down.svg'); /* Path to your custom arrow icon */
+  background-repeat: no-repeat;
+  background-position: right 15px center; /* Adjust as needed */
+  background-size: 30px 30px; /* Adjust size as needed */
+}
+
+
 .animated-background {
     /* Tailwind classes for base styling */
     @apply relative overflow-hidden;

@@ -17,7 +17,7 @@ const App = () => {
             <Hero />
           </div>
         </div>
-        <div className="w-full">
+        <div>
           <About />
           <SavingsTool />
         </div>

@@ -7,6 +7,7 @@ import Vision from './Vision';
 import Solutions from './Solutions';
 import SolutionsText from './SolutionsText';
 import SavingsTool from './SavingsTool';
+import Alert from './Alert';
 
 export {
   Hero,
@@ -17,5 +18,6 @@ export {
   Vision,
   Solutions,
   SolutionsText,
-  SavingsTool
+  SavingsTool,
+  Alert
 }
