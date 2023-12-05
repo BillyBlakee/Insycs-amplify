@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import Graph from "./Graph";
-import Alert from "./Alert"
+import Alert from "./Alert";
 
 import { SectionWrapper } from "../hoc";
 import { styles } from "../styles";
@@ -15,6 +15,15 @@ const SavingsTool = () => {
     homeValue: "",
     zipcode: "",
   });
+
+  const initialData = {
+    companyExpenses: 50000,
+    claimPayout: 30000,
+    companyProfit: 20000,
+  };
+
+  // State to hold and update the graph data
+  const [graphData, setGraphData] = useState(initialData);
   const [loading, setLoading] = useState(false);
   const [showError, setShowError] = useState(false);
   const [alertMsg, setAlertMsg] = useState("");
@@ -31,11 +40,25 @@ const SavingsTool = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     if (form.insuranceCompany == "Select") {
       console.log("You must choose an insurance providor. Please try again.");
       setShowError(true);
     }
+
+    setGraphData(() => {
+      const companyExpenses = form.monthlyPayment * 0.242;
+      const claimPayout = form.monthlyPayment * 0.696;
+      const companyProfit =
+        form.monthlyPayment - (companyExpenses + claimPayout);
+
+      return {
+        companyExpenses,
+        claimPayout,
+        companyProfit,
+      };
+    });
+
 
     console.log(form.insuranceCompany);
   };
@@ -141,7 +164,7 @@ const SavingsTool = () => {
 
           {/* Display the graph here */}
           <div className="flex w-full flex-col justify-center items-center p-5">
-            <Graph />
+            <Graph data={graphData} />
           </div>
         </div>
       </motion.div>
