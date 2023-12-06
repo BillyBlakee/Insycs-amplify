@@ -83,7 +83,7 @@ const SavingsTool = () => {
       >
         <div className={`bg-[#e5e9f0] rounded-2xl ${styles.padding}`}>
           <h3 className="text-center text-tertiary font-black text-[40px] md:text-[40px] sm:text-[20px] xs:text-[20px]">
-            How much is your insurance company <br /> losing you?
+            Where does your insurance payment go?
           </h3>
         </div>
 
