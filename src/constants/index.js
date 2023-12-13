@@ -57,7 +57,7 @@ const testimonials = [
   {
     name: "Justin Taylor",
     designation: "Nobody",
-    image: "./images/dylan.png",
+    image: "./images/justin.png",
   },
   {
     name: "Matthew Allen",

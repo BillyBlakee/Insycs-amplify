@@ -5,14 +5,18 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 const Graph = ({ data }) => {
-  // The data prop should be an object with the structure:
-  // { companyExpenses: number, claimPayout: number, companyProfit: number }
+  // Round the data to the nearest whole number
+  const roundedData = {
+    companyExpenses: Math.round(data.companyExpenses),
+    claimPayout: Math.round(data.claimPayout),
+    companyProfit: Math.round(data.companyProfit),
+  };
 
   const chartData = {
     labels: ["Company Expenses", "Claim Payout", "Company Profit"],
     datasets: [
       {
-        data: [data.companyExpenses, data.claimPayout, data.companyProfit],
+        data: [roundedData.companyExpenses, roundedData.claimPayout, roundedData.companyProfit],
         backgroundColor: [
           "rgba(255, 99, 132, 0.8)",
           "rgba(54, 162, 235, 0.8)",
@@ -40,6 +44,20 @@ const Graph = ({ data }) => {
         text: "Insurance Breakdown",
         color: "rgba(22, 22, 22, 0.8)", // Text color for the title
       },
+      tooltip: {
+        callbacks: {
+          label: function(context) {
+            let label = context.label || '';
+            if (label) {
+              label += ': ';
+            }
+            if (context.parsed !== null) {
+              label += '$' + context.parsed;
+            }
+            return label;
+          }
+        }
+      }
     },
   };
 
