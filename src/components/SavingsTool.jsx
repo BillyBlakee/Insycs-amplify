@@ -13,19 +13,19 @@ function calculateInsuranceData(companyName, monthlyPayment) {
   switch (companyName) {
     case "Chubb":
       expensePercentage = 0.244; // Replace with actual percentage for Chubb
-      payoutPercentage = 0.64;  // Replace with actual percentage for Chubb
+      payoutPercentage = 0.64; // Replace with actual percentage for Chubb
       break;
     case "Allstate":
       expensePercentage = 0.242; // Replace with actual percentage for Allstate
-      payoutPercentage = 0.696;  // Replace with actual percentage for Allstate
+      payoutPercentage = 0.696; // Replace with actual percentage for Allstate
       break;
     case "Progressive":
       expensePercentage = 0.294; // Replace with actual percentage for Progressive
-      payoutPercentage = 0.588;  // Replace with actual percentage for Progressive
+      payoutPercentage = 0.588; // Replace with actual percentage for Progressive
       break;
     case "AIG":
       expensePercentage = 0.309; // Replace with actual percentage for AIG
-      payoutPercentage = 0.596;  // Replace with actual percentage for AIG
+      payoutPercentage = 0.596; // Replace with actual percentage for AIG
       break;
     default:
       // Default percentages if the company is not listed
@@ -46,7 +46,7 @@ function calculateInsuranceData(companyName, monthlyPayment) {
 
 function cleanPaymentInput(input) {
   // Remove non-numeric characters
-  const cleanedInput = input.replace(/[^0-9.]/g, '');
+  const cleanedInput = input.replace(/[^0-9.]/g, "");
   return parseFloat(cleanedInput);
 }
 
@@ -90,17 +90,17 @@ const SavingsTool = () => {
     }
 
     setGraphData(() => {
-      const cleanedPayment = cleanPaymentInput(form.monthlyPayment)
+      const cleanedPayment = cleanPaymentInput(form.monthlyPayment);
       return calculateInsuranceData(form.insuranceCompany, cleanedPayment);
     });
-
 
     console.log(form.insuranceCompany);
   };
 
   return (
-    <div className={`sm:px-16 px-6 sm:py-16 py-10 max-w-screen-xl mx-auto relative z-0`}>
-      {" "}
+    <div
+      className={`sm:px-16 px-6 sm:py-16 py-10 max-w-screen-xl mx-auto relative z-0`}
+    >
       {/* Relative positioned container */}
       <div
         className="absolute inset-0 flex justify-center items-center z-10"
@@ -114,7 +114,7 @@ const SavingsTool = () => {
       </div>
       <motion.div
         variants={slideIn("right", "tween", 0.2, 1)}
-        className="flex-[0.5] md:flex-[0.75] bg-primary-complement rounded-2xl"
+        className="flex flex-col md:flex-row flex-[0.5] md:flex-[0.75] bg-primary-complement rounded-2xl"
       >
         <div className={`bg-[#e5e9f0] rounded-2xl ${styles.padding}`}>
           <h3 className="text-center text-tertiary font-black text-[40px] md:text-[40px] sm:text-[20px] xs:text-[20px]">
@@ -122,11 +122,12 @@ const SavingsTool = () => {
           </h3>
         </div>
 
-        <div className="px-5 md:px-10 py-3 flex-row flex">
+        <div className="px-5 md:px-10 py-3 flex flex-col md:flex-row w-full">
+          {/* Form Section */}
           <form
             ref={formRef}
             onSubmit={handleSubmit}
-            className="flex w-full md:w-1/2 flex-col justify-center items-left p-5 gap-6" // Adjust width and margin as needed
+            className="flex w-full md:w-1/2 flex-col justify-center items-left p-5 gap-6"
           >
             <label className="flex flex-col">
               <span className="text-text-color-light font-medium mb-4">
@@ -196,7 +197,7 @@ const SavingsTool = () => {
             </button>
           </form>
 
-          {/* Display the graph here */}
+          {/* Graph Section */}
           <div className="flex w-full md:w-1/2 flex-col justify-center items-center p-5">
             <Graph data={graphData} />
           </div>
@@ -206,4 +207,4 @@ const SavingsTool = () => {
   );
 };
 
-export default SavingsTool
+export default SavingsTool;
