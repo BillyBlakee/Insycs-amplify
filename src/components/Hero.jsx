@@ -40,7 +40,7 @@ const Hero = () => {
 
         {/* Inner div 3 */}
         <div className="flex-grow md:max-w-[50%] w-full">
-          <img src="public/images/house2.png" alt="hero" className="w-full md:w-auto" />
+          <img src="./images/house2.png" alt="hero" className="w-full md:w-autow-3/4 md:w-1/2 lg:w-auto" />
         </div>
       </motion.div>
     </section>

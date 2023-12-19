@@ -64,7 +64,6 @@ const Graph = ({ data }) => {
   return (
     <div
       className={`bg-[#bbcee2] rounded-2xl sm:px-16 px-3 sm:py-16 min-h-[300px]`}
-      style={{ width: "500px", height: "500px" }}
     >
       <Pie data={chartData} options={options} />
     </div>

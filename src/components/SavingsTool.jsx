@@ -114,20 +114,20 @@ const SavingsTool = () => {
       </div>
       <motion.div
         variants={slideIn("right", "tween", 0.2, 1)}
-        className="flex flex-col md:flex-row flex-[0.5] md:flex-[0.75] bg-primary-complement rounded-2xl"
+        className="flex flex-col flex-[0.5] lg:flex-[0.75] bg-primary-complement rounded-2xl"
       >
         <div className={`bg-[#e5e9f0] rounded-2xl ${styles.padding}`}>
-          <h3 className="text-center text-tertiary font-black text-[40px] md:text-[40px] sm:text-[20px] xs:text-[20px]">
+          <h3 className="text-center text-tertiary font-black text-[40px] lg:text-[40px] sm:text-[30px] xs:text-[20px]">
             Where does your insurance payment go?
           </h3>
         </div>
 
-        <div className="px-5 md:px-10 py-3 flex flex-col md:flex-row w-full">
+        <div className="px-5 lg:px-10 py-3 flex flex-col lg:flex-row w-full">
           {/* Form Section */}
           <form
             ref={formRef}
             onSubmit={handleSubmit}
-            className="flex w-full md:w-1/2 flex-col justify-center items-left p-5 gap-6"
+            className="flex w-full lg:w-1/2 flex-col justify-center items-left p-5 gap-6"
           >
             <label className="flex flex-col">
               <span className="text-text-color-light font-medium mb-4">
@@ -198,7 +198,7 @@ const SavingsTool = () => {
           </form>
 
           {/* Graph Section */}
-          <div className="flex w-full md:w-1/2 flex-col justify-center items-center p-5">
+          <div className="flex w-auto xs:w-1/4 lg:w-1/2 flex-col justify-center items-center p-5">
             <Graph data={graphData} />
           </div>
         </div>
