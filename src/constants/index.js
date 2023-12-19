@@ -26,42 +26,38 @@ const solutions = [
     title: "Innovating Insurance",
     info: "Bringing never before seen products to the insurance space-Cheaper premiums-Eliminating premiums",
   },
-  {
-    title: "Title",
-    info: "Subtext",
-  },
 ];
 
 
 const testimonials = [
   {
     name: "Jim Seale",
-    designation: "TITLE",
+    designation: "CEO",
     image: "./images/jim.png",
   },
   {
     name: "Dave Lugar",
-    designation: "Title",
+    designation: "Head of Lobbying",
     image: "./images/dave.png",
   },
   {
     name: "Billy Blake",
-    designation: "Nobody",
+    designation: "Engineer",
     image: "./images/billy.png",
   },
   {
     name: "Dylan Duhamel",
-    designation: "Nobody",
+    designation: "Engineer",
     image: "./images/dylan.png",
   },
   {
     name: "Justin Taylor",
-    designation: "Nobody",
+    designation: "Operations Analyst",
     image: "./images/justin.png",
   },
   {
     name: "Matthew Allen",
-    designation: "Nobody",
+    designation: "Analyst",
     image: "./images/matt.png",
   },
 ];
