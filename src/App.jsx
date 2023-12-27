@@ -1,6 +1,17 @@
 import { BrowserRouter } from "react-router-dom";
 
-import { About, SavingsTool, Contact, Team, Solutions, SolutionsText, Hero, Navbar, Vision } from "./components";
+import {
+  About,
+  SavingsTool,
+  Contact,
+  Team,
+  Solutions,
+  SolutionsText,
+  Hero,
+  Navbar,
+  Vision,
+  Experience,
+} from "./components";
 
 const App = () => {
   return (
@@ -12,21 +23,20 @@ const App = () => {
           className="relative bg-no-repeat bg-center"
         >
           {/* Background Image Container */}
-          <div className="bg-hero-pattern bg-cover" style={{ height: "100%" }}>
+          <div className="bg-hero-pattern bg-cover" style={{ height: "105%" }}>
             <Navbar />
             <Hero />
           </div>
         </div>
-        <div>
-          <About />
-          <SavingsTool />
+        <About />
+        <div className="w-full">
+          <SolutionsText />
         </div>
+        <SavingsTool />
         <div className="w-full bg-[#010B15] bg-cover">
           <Vision />
         </div>
         <div className="w-full">
-          <SolutionsText />
-          <Solutions />
           <Team />
         </div>
         <div className="bg-primary-complement relative z-0">
@@ -36,6 +46,5 @@ const App = () => {
     </BrowserRouter>
   );
 };
-
 
 export default App;

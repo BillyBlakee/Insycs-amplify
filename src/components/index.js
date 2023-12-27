@@ -8,6 +8,7 @@ import Solutions from './Solutions';
 import SolutionsText from './SolutionsText';
 import SavingsTool from './SavingsTool';
 import Alert from './Alert';
+import Experience from './Experience';
 
 export {
   Hero,
@@ -19,5 +20,6 @@ export {
   Solutions,
   SolutionsText,
   SavingsTool,
-  Alert
+  Alert,
+  Experience
 }

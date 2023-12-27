@@ -13,6 +13,24 @@
   color-scheme: dark;
 }
 
+.vertical-timeline--animate .vertical-timeline-element-content {
+  margin-left: 0px;
+}
+
+.vertical-timeline::before {
+  background: #DC3C0C; /* Replace #yourColor with the color you want */
+}
+
+.custom-left {
+    position: relative;
+    left: -100%;
+}
+
+.custom-right {
+    position: relative;
+    left: 0;
+}
+
 .select-hide-arrow {
   -webkit-appearance: none;  /* For Chrome, Safari */
   -moz-appearance: none;     /* For Firefox */

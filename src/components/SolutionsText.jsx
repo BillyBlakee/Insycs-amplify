@@ -10,7 +10,11 @@ const SolutionsText = () => {
     return (
       <div style={{ marginBottom: 0 }}>
         <motion.div variants={textVariant()}>
-          <h2 className={styles.sectionHeadText}>Problems in the Current Environment</h2>
+          <h2 className={`${styles.sectionHeadText} text-center`}>Problems in the Current Environment</h2>
+          <div className="flex flex-row justify-around w-full text-center">
+            <h2 className={`${styles.sectionHeadText} text-center`}>Home</h2>
+            <h2 className={`${styles.sectionHeadText} text-center`}>Commercial</h2>
+          </div>
         </motion.div>
   
         <motion.div

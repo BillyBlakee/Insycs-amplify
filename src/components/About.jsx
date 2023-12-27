@@ -7,16 +7,24 @@ import { SectionWrapper } from "../hoc";
 
 const About = () => {
   return (
-    <div className="flex flex-col lg:flex-row items-center md:space-x-4">
-      <div className="flex flex-col w-full">
+    <div className="flex flex-col lg:flex-row items-center justify-center md:space-x-4">
+      <div className="w-full lg:w-1/2 flex justify-center">
+        <img
+          src="public/images/beach-house.svg"
+          alt="hero"
+          className="w-3/4 md:w-1/2 lg:w-auto"
+        />
+      </div>
+
+      <div className="flex flex-col w-full text-center">
         <motion.div variants={textVariant()}>
-          <p className={styles.sectionSubText}>About</p>
-          <h2 className={styles.sectionHeadText}>Who We Are</h2>
+          <p className="sm:text-[18px] text-[14px] text-primary-complement uppercase tracking-wider">About</p>
+          <h2 className="text-tertiary font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]">Who We Are</h2>
         </motion.div>
 
         <motion.p
           variants={fadeIn("", "", 0.1, 1)}
-          className="mt-4 text-text-color text-[17px] max-w-xl leading-[30px]"
+          className="mt-4 text-text-color text-[17px] max-w-xl leading-[30px] mx-auto"
         >
           INSYCS strives to be an insurance company for the people. We want to
           provide property insurance in states where traditional insurance
