@@ -38,7 +38,7 @@ const About = () => {
 
       <div className="w-full lg:w-1/2 flex justify-center">
         <img
-          src="public/images/beach-house.svg"
+          src="public/images/amico-corporate.png"
           alt="hero"
           className="w-3/4 md:w-1/2 lg:w-auto"
         />
