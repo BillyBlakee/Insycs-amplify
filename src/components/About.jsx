@@ -7,7 +7,7 @@ import { SectionWrapper } from "../hoc";
 
 const About = () => {
   return (
-    <div className="flex flex-col lg:flex-row items-center justify-center md:space-x-4">
+    <div className="mt-16 mb-10 flex flex-col lg:flex-row items-center justify-center md:space-x-4">
       <div className="w-full lg:w-1/2 flex justify-center">
         <img
           src="public/images/beach-house.svg"

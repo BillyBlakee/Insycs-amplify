@@ -1,4 +1,4 @@
- export const navLinks = [
+export const navLinks = [
   {
     id: "about",
     title: "About",
@@ -28,6 +28,48 @@ const solutions = [
   },
 ];
 
+const insuranceDomainInfo = [
+  {
+    text: "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
+    title: "Market Size",
+    insuranceType: "Home",
+  },
+  {
+    text: "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
+    title: "Market Problems",
+    insuranceType: "Home",
+  },
+  {
+    text: "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
+    title: "Our Product",
+    insuranceType: "Home",
+  },
+  {
+    text: "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
+    title: "Market Impact",
+    insuranceType: "Home",
+  },
+  {
+    text: "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
+    title: "Market Size",
+    insuranceType: "Commercial",
+  },
+  {
+    text: "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
+    title: "Market Problems",
+    insuranceType: "Commercial",
+  },
+  {
+    text: "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
+    title: "Our Product",
+    insuranceType: "Commercial",
+  },
+  {
+    text: "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
+    title: "Market Impact",
+    insuranceType: "Commercial",
+  },
+];
 
 const testimonials = [
   {
@@ -117,8 +159,6 @@ const experiences = [
   },
 ];
 
-const projects = [
-  
-];
+const projects = [];
 
-export { solutions, testimonials, projects, experiences };
+export { solutions, testimonials, projects, experiences, insuranceDomainInfo };

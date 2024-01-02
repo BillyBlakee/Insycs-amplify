@@ -207,4 +207,4 @@ const SavingsTool = () => {
   );
 };
 
-export default SavingsTool;
+export default SectionWrapper(SavingsTool, "SavingsTool");

@@ -12,8 +12,8 @@ const SolutionsText = () => {
         <motion.div variants={textVariant()}>
           <h2 className={`${styles.sectionHeadText} text-center tracking-wide mb-14`}>Problems In The Current Environment</h2>
           <div className="flex flex-row justify-around w-full text-center">
-            <h2 className={`${styles.sectionHeadText} text-center`}>Home</h2>
-            <h2 className={`${styles.sectionHeadText} text-center`}>Commercial</h2>
+            <h2 className={`text-[#2e3440] font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px] text-center`}>Home</h2>
+            <h2 className={`text-[#2e3440] font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px] text-center`}>Commercial</h2>
           </div>
         </motion.div>
   

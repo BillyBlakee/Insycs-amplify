@@ -13,7 +13,7 @@ const styles = {
   sectionSubText:
     "sm:text-[18px] text-[14px] text-primary-complement uppercase tracking-wider",
   sectionMidText:
-    "text-[##2e3440] font-bold lg:text-[20px] sm:text-[16px] xs:text-[10px] text-[16px] lg:leading-[40px]",
+    "text-[#2e3440] font-bold lg:text-[20px] sm:text-[16px] xs:text-[10px] text-[16px] lg:leading-[40px]",
 };
   
   export { styles };

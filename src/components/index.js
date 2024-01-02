@@ -9,6 +9,7 @@ import SolutionsText from './SolutionsText';
 import SavingsTool from './SavingsTool';
 import Alert from './Alert';
 import Experience from './Experience';
+import HomeCommercialInfo from './HomeCommercialInfo';
 
 export {
   Hero,
@@ -21,5 +22,6 @@ export {
   SolutionsText,
   SavingsTool,
   Alert,
-  Experience
+  Experience,
+  HomeCommercialInfo
 }

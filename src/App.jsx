@@ -11,6 +11,7 @@ import {
   Navbar,
   Vision,
   Experience,
+  HomeCommercialInfo,
 } from "./components";
 
 const App = () => {
@@ -29,9 +30,10 @@ const App = () => {
           </div>
         </div>
         <About />
-        <div className="w-full">
+        <HomeCommercialInfo />
+        {/* <div className="w-full">
           <SolutionsText />
-        </div>
+        </div> */}
         <SavingsTool />
         <div className="w-full bg-[#010B15] bg-cover">
           <Vision />
