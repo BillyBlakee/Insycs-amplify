@@ -36,9 +36,9 @@ const HomeCommercialInfo = () => {
           </div>
           <div className="flex border-b mt-4 md:mt-0">
             <button
-              className={`py-3 px-6 text-primary-complement ${
+              className={`py-3 px-6 text-lg text-primary-complement ${
                 insuranceType === "Home"
-                  ? "border-b-2 border-blue-500 font-medium"
+                  ? "border-b-4 border-blue-500 font-medium"
                   : ""
               }`}
               onClick={() => setInsuranceType("Home")}
@@ -46,9 +46,9 @@ const HomeCommercialInfo = () => {
               Home
             </button>
             <button
-              className={`py-3 px-6 text-primary-complement ${
+              className={`py-3 px-6 text-lg text-primary-complement ${
                 insuranceType === "Commercial"
-                  ? "border-b-2 border-blue-500 font-medium"
+                  ? "border-b-4 border-blue-500 font-medium"
                   : ""
               }`}
               onClick={() => setInsuranceType("Commercial")}

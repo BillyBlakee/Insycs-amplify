@@ -98,9 +98,7 @@ const SavingsTool = () => {
   };
 
   return (
-    <div
-      className={`sm:px-16 px-6 sm:py-16 py-10 max-w-screen-xl mx-auto relative z-0`}
-    >
+    <div className={`py-10 mx-auto relative z-0`}>
       {/* Relative positioned container */}
       <div
         className="absolute inset-0 flex justify-center items-center z-10"
@@ -121,13 +119,12 @@ const SavingsTool = () => {
             Where does your insurance payment go?
           </h3>
         </div>
-
         <div className="px-5 lg:px-10 py-3 flex flex-col lg:flex-row w-full">
           {/* Form Section */}
           <form
             ref={formRef}
             onSubmit={handleSubmit}
-            className="flex w-full lg:w-1/2 flex-col justify-center items-left p-5 gap-6"
+            className="flex w-full lg:w-1/3 flex-col justify-center items-left p-5 gap-6"
           >
             <label className="flex flex-col">
               <span className="text-text-color-light font-medium mb-4">
@@ -198,7 +195,8 @@ const SavingsTool = () => {
           </form>
 
           {/* Graph Section */}
-          <div className="flex w-auto xs:w-1/4 lg:w-1/2 flex-col justify-center items-center p-5">
+          <div className="flex flex-col lg:flex-row w-full lg:w-2/3 justify-between items-center p-10">
+            <Graph data={graphData} />
             <Graph data={graphData} />
           </div>
         </div>

@@ -50,22 +50,22 @@ const insuranceDomainInfo = [
     insuranceType: "Home",
   },
   {
-    text: "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
+    text: "You thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
     title: "Market Size",
     insuranceType: "Commercial",
   },
   {
-    text: "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
+    text: "You thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
     title: "Market Problems",
     insuranceType: "Commercial",
   },
   {
-    text: "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
+    text: "You thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
     title: "Our Product",
     insuranceType: "Commercial",
   },
   {
-    text: "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
+    text: "You thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
     title: "Market Impact",
     insuranceType: "Commercial",
   },
@@ -84,7 +84,7 @@ const testimonials = [
   },
   {
     name: "Billy Blake",
-    designation: "Engineer",
+    designation: "Software Engineer",
     image: "./images/billy.png",
   },
   {

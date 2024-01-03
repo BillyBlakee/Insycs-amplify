@@ -63,7 +63,7 @@ const Graph = ({ data }) => {
 
   return (
     <div
-      className={`bg-[#bbcee2] rounded-2xl sm:px-16 px-3 sm:py-16 min-h-[300px]`}
+      className={`bg-[#bbcee2] rounded-2xl sm:px-2 px-3 sm:py-2 min-h-[300px]`}
     >
       <Pie data={chartData} options={options} />
     </div>
