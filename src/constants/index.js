@@ -89,17 +89,17 @@ const testimonials = [
   },
   {
     name: "Dylan Duhamel",
-    designation: "Engineer",
+    designation: "Software Engineer",
     image: "./images/dylan.png",
   },
   {
     name: "Justin Taylor",
-    designation: "Operations Analyst",
+    designation: "Lead AI Operations Specialist",
     image: "./images/justin.png",
   },
   {
     name: "Matthew Allen",
-    designation: "Analyst",
+    designation: "VP of Product",
     image: "./images/matt.png",
   },
 ];

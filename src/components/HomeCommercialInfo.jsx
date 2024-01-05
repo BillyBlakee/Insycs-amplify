@@ -9,7 +9,7 @@ import { insuranceDomainInfo } from "../constants";
 const InsuranceCard = ({ index, text, title, insuranceType }) => (
   <motion.div
     variants={fadeIn("", "spring", index * 0.5, 0.75)}
-    className="bg-black-200 p-8 rounded-3xl xs:w-[360px] w-full"
+    className="bg-black-200 p-8 rounded-3xl xs:w-[360px] lg:w-[480px] w-full text-center"
   >
     <p className="text-white font-black text-[32px]">{title}</p>
     <div className="mt-1">
@@ -36,7 +36,7 @@ const HomeCommercialInfo = () => {
           </div>
           <div className="flex border-b mt-4 md:mt-0">
             <button
-              className={`py-3 px-6 text-lg text-primary-complement ${
+              className={`py-3 px-6 text-xl text-primary-complement ${
                 insuranceType === "Home"
                   ? "border-b-4 border-blue-500 font-medium"
                   : ""
@@ -46,7 +46,7 @@ const HomeCommercialInfo = () => {
               Home
             </button>
             <button
-              className={`py-3 px-6 text-lg text-primary-complement ${
+              className={`py-3 px-6 text-xl text-primary-complement ${
                 insuranceType === "Commercial"
                   ? "border-b-4 border-blue-500 font-medium"
                   : ""
