@@ -8,7 +8,7 @@ import { SectionWrapper } from "../hoc";
 import { styles } from "../styles";
 import { slideIn } from "../utils/motion";
 
-function calculateInsuranceData(companyName, monthlyPayment) {
+function calculateInsuranceDataExternal(companyName, monthlyPayment) {
   let expensePercentage, payoutPercentage;
 
   switch (companyName) {
@@ -45,6 +45,18 @@ function calculateInsuranceData(companyName, monthlyPayment) {
   };
 }
 
+function calculateInsuranceDataINSYCS(companyName, monthlyPayment) {
+  const companyExpenses = monthlyPayment * 0.005;
+  const claimPayout = monthlyPayment * 0.995;
+  const companyProfit = 0.0;
+
+  return {
+    companyExpenses,
+    claimPayout,
+    companyProfit,
+  };
+}
+
 function cleanPaymentInput(input) {
   // Remove non-numeric characters
   const cleanedInput = input.replace(/[^0-9.]/g, "");
@@ -66,7 +78,8 @@ const SavingsTool = () => {
   };
 
   // State to hold and update the graph data
-  const [graphData, setGraphData] = useState(initialData);
+  const [graphDataExternal, setGraphDataExternal] = useState(initialData);
+  const [graphDataINSYCS, setGraphDataINSYCS] = useState(initialData);
   const [loading, setLoading] = useState(false);
   const [showError, setShowError] = useState(false);
   const [alertMsg, setAlertMsg] = useState("");
@@ -94,9 +107,14 @@ const SavingsTool = () => {
       setShowError(true);
     }
 
-    setGraphData(() => {
+    setGraphDataExternal(() => {
       const cleanedPayment = cleanPaymentInput(form.monthlyPayment);
-      return calculateInsuranceData(form.insuranceCompany, cleanedPayment);
+      return calculateInsuranceDataExternal(form.insuranceCompany, cleanedPayment);
+    });
+
+    setGraphDataINSYCS(() => {
+      const cleanedPayment = cleanPaymentInput(form.monthlyPayment);
+      return calculateInsuranceDataINSYCS(form.insuranceCompany, cleanedPayment);
     });
 
     console.log(form.insuranceCompany);
@@ -189,13 +207,18 @@ const SavingsTool = () => {
           {/* Graph Section */}
           <div className="flex flex-col lg:flex-row w-full lg:w-2/3 justify-between items-center p-10">
             <div className="text-center">
-              <h2 className="text-2xl font-bold mb-4">Allstate</h2>
-              <PieChart data={graphData} />
+              <h2 className="text-2xl font-bold mb-4">
+                {form.insuranceCompany == "Select"
+                  ? "Your Current Provider"
+                  : form.insuranceCompany}
+              </h2>
+              <PieChart data={graphDataExternal} />
             </div>
             <div className="text-center">
               <h2 className="text-2xl font-bold mb-4">INSYCS</h2>
               {/* Generate dummy data for 120 periods */}
-              <BarGraph periodData={periodData} />
+              {/* <BarGraph periodData={periodData} /> */}
+              <PieChart data={graphDataINSYCS} />
             </div>
           </div>
         </div>

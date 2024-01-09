@@ -18,14 +18,14 @@ const PieChart = ({ data }) => {
       {
         data: [roundedData.companyExpenses, roundedData.claimPayout, roundedData.companyProfit],
         backgroundColor: [
-          "rgba(255, 99, 132, 0.8)",
-          "rgba(54, 162, 235, 0.8)",
-          "rgba(75, 192, 192, 0.8)",
+          "rgba(14, 112, 225, 0.8)", // Blue for Company Expenses
+          "rgba(75, 192, 192, 0.8)", // Green for Claim Payout
+          "rgba(255, 99, 132, 0.8)", // Red for Company Profit
         ],
         borderColor: [
-          "rgba(255, 99, 132, 1)",
-          "rgba(54, 162, 235, 1)",
-          "rgba(75, 192, 192, 1)",
+          "rgba(14, 112, 225, 0.8)", // Blue for Company Expenses
+          "rgba(75, 192, 192, 1)", // Green for Claim Payout
+          "rgba(255, 99, 132, 1)", // Red for Company Profit
         ],
         borderWidth: 1,
       },
