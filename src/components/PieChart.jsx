@@ -4,7 +4,7 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-const Graph = ({ data }) => {
+const PieChart = ({ data }) => {
   // Round the data to the nearest whole number
   const roundedData = {
     companyExpenses: Math.round(data.companyExpenses),
@@ -70,4 +70,4 @@ const Graph = ({ data }) => {
   );
 };
 
-export default Graph;
+export default PieChart;

@@ -30,42 +30,42 @@ const solutions = [
 
 const insuranceDomainInfo = [
   {
-    text: "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
+    text: "Insycs is addressing a trillion-dollar market, homeownership in the U.S. is will continue to be a growing market",
     title: "Market Size",
     insuranceType: "Home",
   },
   {
-    text: "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
+    text: "Insurance premiums are becoming unaffordable and can cause a major increase in monthly expense for many Americans",
     title: "Market Problems",
     insuranceType: "Home",
   },
   {
-    text: "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
+    text: "Insycs products can give consumers more flexibility and lower monthly costs",
     title: "Our Product",
     insuranceType: "Home",
   },
   {
-    text: "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
+    text: "Our suite of products will result in a decrease in monthly expenses making homeownership more attainable for all",
     title: "Market Impact",
     insuranceType: "Home",
   },
   {
-    text: "You thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
+    text: "In 2021, the commercial insurance market was valued at $730 Billion and has continued to grow",
     title: "Market Size",
     insuranceType: "Commercial",
   },
   {
-    text: "You thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
+    text: "Insurers are facing the challenge of setting premiums that are both competitive and profitable",
     title: "Market Problems",
     insuranceType: "Commercial",
   },
   {
-    text: "You thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
+    text: "Our products will allow for new pricing models which can benefit both the consumer and insurers",
     title: "Our Product",
     insuranceType: "Commercial",
   },
   {
-    text: "You thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
+    text: "These innovative products will allow the commercial insurance industry maintain a healthy relationship between insurers and consumers",
     title: "Market Impact",
     insuranceType: "Commercial",
   },

@@ -32,7 +32,7 @@ const HomeCommercialInfo = () => {
         >
           <div>
             <p className={styles.sectionSubText}>Why we care</p>
-            <h2 className={styles.sectionHeadText}>Insurance Information.</h2>
+            <h2 className={styles.sectionHeadText}>Insurance Market.</h2>
           </div>
           <div className="flex border-b mt-4 md:mt-0">
             <button

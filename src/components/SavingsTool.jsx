@@ -1,6 +1,7 @@
 import { useState, useRef } from "react";
 import { motion } from "framer-motion";
-import Graph from "./Graph";
+import PieChart from "./PieChart";
+import BarGraph from "./BarGraph";
 import Alert from "./Alert";
 
 import { SectionWrapper } from "../hoc";
@@ -53,10 +54,9 @@ function cleanPaymentInput(input) {
 const SavingsTool = () => {
   const formRef = useRef();
   const [form, setForm] = useState({
+    insuranceMarket: "Select",
     insuranceCompany: "Select",
     monthlyPayment: "",
-    homeValue: "",
-    zipcode: "",
   });
 
   const initialData = {
@@ -70,6 +70,11 @@ const SavingsTool = () => {
   const [loading, setLoading] = useState(false);
   const [showError, setShowError] = useState(false);
   const [alertMsg, setAlertMsg] = useState("");
+
+  const periodData = Array.from(
+    { length: 120 },
+    (_, i) => 100000 * (1 + 0.00911) ** (i + 1)
+  );
 
   const handleChange = (e) => {
     const { target } = e;
@@ -128,6 +133,21 @@ const SavingsTool = () => {
           >
             <label className="flex flex-col">
               <span className="text-text-color-light font-medium mb-4">
+                Your Insurance Market
+              </span>
+              <select
+                name="insuranceMarket"
+                value={form.insuranceMarket}
+                onChange={handleChange}
+                className="bg-[#e5e9f0] py-4 px-6 text-text-color rounded-lg outlined-none border-none font-medium select-hide-arrow"
+              >
+                <option value="Select">Select</option>
+                <option value="Home">Home</option>
+                <option value="Commercial">Commercial</option>
+              </select>
+            </label>
+            <label className="flex flex-col">
+              <span className="text-text-color-light font-medium mb-4">
                 Your Insurance Providor
               </span>
               <select
@@ -158,34 +178,6 @@ const SavingsTool = () => {
               />
             </label>
 
-            <label className="flex flex-col">
-              <span className="text-text-color-light font-medium mb-4">
-                Your Home Value
-              </span>
-              <input
-                type="text"
-                name="homeValue"
-                value={form.homeValue}
-                onChange={handleChange}
-                placeholder="What's your home value?"
-                className="bg-[#e5e9f0] py-4 px-6 placeholder:text-text-color text-text-color rounded-lg outlined-none border-none font-medium"
-              />
-            </label>
-
-            <label className="flex flex-col">
-              <span className="text-text-color-light font-medium mb-4">
-                Your Zipcode
-              </span>
-              <input
-                type="text"
-                name="zipcode"
-                value={form.zipcode}
-                onChange={handleChange}
-                placeholder="What's your zipcode?"
-                className="bg-[#e5e9f0] py-4 px-6 placeholder:text-text-color text-text-color rounded-lg outlined-none border-none font-medium"
-              />
-            </label>
-
             <button
               type="submit"
               className="bg-tertiary py-4 px-8 outline-none w-fit text-white font-bold shadow-md shadow-tertiary-complement rounded-xl"
@@ -196,8 +188,15 @@ const SavingsTool = () => {
 
           {/* Graph Section */}
           <div className="flex flex-col lg:flex-row w-full lg:w-2/3 justify-between items-center p-10">
-            <Graph data={graphData} />
-            <Graph data={graphData} />
+            <div className="text-center">
+              <h2 className="text-2xl font-bold mb-4">Allstate</h2>
+              <PieChart data={graphData} />
+            </div>
+            <div className="text-center">
+              <h2 className="text-2xl font-bold mb-4">INSYCS</h2>
+              {/* Generate dummy data for 120 periods */}
+              <BarGraph periodData={periodData} />
+            </div>
           </div>
         </div>
       </motion.div>
