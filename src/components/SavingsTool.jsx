@@ -1,4 +1,6 @@
-import { useState, useRef } from "react";
+import React, { useRef } from "react";
+import { useState } from "react";
+import { FaCaretLeft, FaCaretRight } from "react-icons/fa";
 import { motion } from "framer-motion";
 import PieChart from "./PieChart";
 import BarGraph from "./BarGraph";
@@ -83,11 +85,25 @@ const SavingsTool = () => {
   const [loading, setLoading] = useState(false);
   const [showError, setShowError] = useState(false);
   const [alertMsg, setAlertMsg] = useState("");
+  const [isFormCollapsed, setIsFormCollapsed] = useState(false);
 
   const periodData = Array.from(
     { length: 120 },
     (_, i) => 100000 * (1 + 0.00911) ** (i + 1)
   );
+
+  const formVariants = {
+    open: { 
+      x: 0, 
+      opacity: 1, 
+      transition: { type: "spring", stiffness: 50, duration: 0.5 } 
+    },
+    closed: {
+      x: "-100%",
+      opacity: 0,
+      transition: { type: "spring", stiffness: 50, duration: 1, ease: "easeOut" },
+    },
+  };
 
   const handleChange = (e) => {
     const { target } = e;
@@ -102,6 +118,8 @@ const SavingsTool = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    setIsFormCollapsed(true)
+
     if (form.insuranceCompany == "Select") {
       console.log("You must choose an insurance providor. Please try again.");
       setShowError(true);
@@ -109,12 +127,18 @@ const SavingsTool = () => {
 
     setGraphDataExternal(() => {
       const cleanedPayment = cleanPaymentInput(form.monthlyPayment);
-      return calculateInsuranceDataExternal(form.insuranceCompany, cleanedPayment);
+      return calculateInsuranceDataExternal(
+        form.insuranceCompany,
+        cleanedPayment
+      );
     });
 
     setGraphDataINSYCS(() => {
       const cleanedPayment = cleanPaymentInput(form.monthlyPayment);
-      return calculateInsuranceDataINSYCS(form.insuranceCompany, cleanedPayment);
+      return calculateInsuranceDataINSYCS(
+        form.insuranceCompany,
+        cleanedPayment
+      );
     });
 
     console.log(form.insuranceCompany);
@@ -142,67 +166,84 @@ const SavingsTool = () => {
             Where does your insurance payment go?
           </h3>
         </div>
-        <div className="px-5 lg:px-10 py-3 flex flex-col lg:flex-row w-full">
-          {/* Form Section */}
-          <form
-            ref={formRef}
-            onSubmit={handleSubmit}
-            className="flex w-full lg:w-1/3 flex-col justify-center items-left p-5 gap-6"
-          >
-            <label className="flex flex-col">
-              <span className="text-text-color-light font-medium mb-4">
-                Your Insurance Market
-              </span>
-              <select
-                name="insuranceMarket"
-                value={form.insuranceMarket}
-                onChange={handleChange}
-                className="bg-[#e5e9f0] py-4 px-6 text-text-color rounded-lg outlined-none border-none font-medium select-hide-arrow"
-              >
-                <option value="Select">Select</option>
-                <option value="Home">Home</option>
-                <option value="Commercial">Commercial</option>
-              </select>
-            </label>
-            <label className="flex flex-col">
-              <span className="text-text-color-light font-medium mb-4">
-                Your Insurance Providor
-              </span>
-              <select
-                name="insuranceCompany"
-                value={form.insuranceCompany}
-                onChange={handleChange}
-                className="bg-[#e5e9f0] py-4 px-6 text-text-color rounded-lg outlined-none border-none font-medium select-hide-arrow"
-              >
-                <option value="Select">Select</option>
-                <option value="Allstate">Allstate</option>
-                <option value="Chubb">Chubb</option>
-                <option value="Progressive">Progressive</option>
-                <option value="AIG">AIG</option>
-              </select>
-            </label>
-
-            <label className="flex flex-col">
-              <span className="text-text-color-light font-medium mb-4">
-                Your Monthly Payment
-              </span>
-              <input
-                type="text"
-                name="monthlyPayment"
-                value={form.monthlyPayment}
-                onChange={handleChange}
-                placeholder="What's your monthly payment?"
-                className="bg-[#e5e9f0] py-4 px-6 placeholder:text-text-color text-text-color rounded-lg outlined-none border-none font-medium"
+        <div className="px-5 lg:px-5 py-3 flex flex-col lg:flex-row w-full">
+          <div className="flex items-center">
+            {isFormCollapsed ? (
+              <FaCaretRight
+                size={30}
+                onClick={() => setIsFormCollapsed(false)}
               />
-            </label>
-
-            <button
-              type="submit"
-              className="bg-tertiary py-4 px-8 outline-none w-fit text-white font-bold shadow-md shadow-tertiary-complement rounded-xl"
+            ) : (
+              <FaCaretLeft size={30} onClick={() => setIsFormCollapsed(true)} />
+            )}
+          </div>
+          {/* Form Section */}
+          {!isFormCollapsed && (
+            <motion.div
+              ref={formRef}
+              onSubmit={handleSubmit}
+              className="flex w-full lg:w-1/3 flex-col justify-center items-left p-5 gap-6"
+              variants={formVariants}
+              initial="closed"
+              animate={isFormCollapsed ? "closed" : "open"}
             >
-              {loading ? "Calculating..." : "Calculate"}
-            </button>
-          </form>
+              <form className="flex flex-col">
+                <label className="flex flex-col">
+                  <span className="text-text-color-light font-medium mb-4">
+                    Your Insurance Market
+                  </span>
+                  <select
+                    name="insuranceMarket"
+                    value={form.insuranceMarket}
+                    onChange={handleChange}
+                    className="bg-[#e5e9f0] py-4 px-6 text-text-color rounded-lg outlined-none border-none font-medium select-hide-arrow"
+                  >
+                    <option value="Select">Select</option>
+                    <option value="Home">Home</option>
+                    <option value="Commercial">Commercial</option>
+                  </select>
+                </label>
+                <label className="flex flex-col">
+                  <span className="text-text-color-light font-medium mb-4">
+                    Your Insurance Providor
+                  </span>
+                  <select
+                    name="insuranceCompany"
+                    value={form.insuranceCompany}
+                    onChange={handleChange}
+                    className="bg-[#e5e9f0] py-4 px-6 text-text-color rounded-lg outlined-none border-none font-medium select-hide-arrow"
+                  >
+                    <option value="Select">Select</option>
+                    <option value="Allstate">Allstate</option>
+                    <option value="Chubb">Chubb</option>
+                    <option value="Progressive">Progressive</option>
+                    <option value="AIG">AIG</option>
+                  </select>
+                </label>
+                <label className="flex flex-col">
+                  <span className="text-text-color-light font-medium mb-4">
+                    Your Monthly Payment
+                  </span>
+                  <input
+                    type="text"
+                    name="monthlyPayment"
+                    value={form.monthlyPayment}
+                    onChange={handleChange}
+                    placeholder="What's your monthly payment?"
+                    className="bg-[#e5e9f0] py-4 px-6 placeholder:text-text-color text-text-color rounded-lg outlined-none border-none font-medium"
+                  />
+                </label>
+                <div className="flex justify-center pt-10">
+                  <button
+                    type="submit"
+                    className="bg-tertiary py-4 px-8 outline-none w-fit text-white font-bold shadow-md shadow-tertiary-complement rounded-xl"
+                  >
+                    {loading ? "Calculating..." : "Calculate"}
+                  </button>
+                </div>
+              </form>
+            </motion.div>
+          )}
 
           {/* Graph Section */}
           <div className="flex flex-col lg:flex-row w-full lg:w-2/3 justify-between items-center p-10">
