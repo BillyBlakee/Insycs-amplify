@@ -86,22 +86,23 @@ const SavingsTool = () => {
   const [showError, setShowError] = useState(false);
   const [alertMsg, setAlertMsg] = useState("");
   const [isFormCollapsed, setIsFormCollapsed] = useState(false);
-
-  const periodData = Array.from(
-    { length: 120 },
-    (_, i) => 100000 * (1 + 0.00911) ** (i + 1)
-  );
+  const [periodData, setPeriodData] = useState([]);
 
   const formVariants = {
-    open: { 
-      x: 0, 
-      opacity: 1, 
-      transition: { type: "spring", stiffness: 50, duration: 0.5 } 
+    open: {
+      x: 0,
+      opacity: 1,
+      transition: { type: "spring", stiffness: 50, duration: 0.5 },
     },
     closed: {
       x: "-100%",
       opacity: 0,
-      transition: { type: "spring", stiffness: 50, duration: 1, ease: "easeOut" },
+      transition: {
+        type: "spring",
+        stiffness: 50,
+        duration: 1,
+        ease: "easeOut",
+      },
     },
   };
 
@@ -118,7 +119,7 @@ const SavingsTool = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    setIsFormCollapsed(true)
+    setIsFormCollapsed(true);
 
     if (form.insuranceCompany == "Select") {
       console.log("You must choose an insurance providor. Please try again.");
@@ -138,6 +139,13 @@ const SavingsTool = () => {
       return calculateInsuranceDataINSYCS(
         form.insuranceCompany,
         cleanedPayment
+      );
+    });
+
+    setPeriodData(() => {
+      return Array.from(
+        { length: 120 },
+        (_, i) => form.monthlyPayment * (1 + 0.00911) ** (i + 1)
       );
     });
 
@@ -246,21 +254,56 @@ const SavingsTool = () => {
           )}
 
           {/* Graph Section */}
-          <div className="flex flex-col lg:flex-row w-full lg:w-2/3 justify-between items-center p-10">
-            <div className="text-center">
-              <h2 className="text-2xl font-bold mb-4">
-                {form.insuranceCompany == "Select"
-                  ? "Your Current Provider"
-                  : form.insuranceCompany}
-              </h2>
-              <PieChart data={graphDataExternal} />
-            </div>
-            <div className="text-center">
-              <h2 className="text-2xl font-bold mb-4">INSYCS</h2>
-              {/* Generate dummy data for 120 periods */}
-              {/* <BarGraph periodData={periodData} /> */}
-              <PieChart data={graphDataINSYCS} />
-            </div>
+          <div className="px-5 lg:px-5 py-3 flex flex-col lg:flex-row w-full">
+            {isFormCollapsed ? (
+              /* When the form is collapsed, the graphs should be smaller and evenly spaced. */
+              <div className="flex flex-row justify-around items-center w-full">
+                <div className="flex-1 text-center mx-2">
+                  <h2 className="text-2xl font-bold mb-4">
+                    Your Current Provider
+                  </h2>
+                  {/* Wrap the chart in a div with padding to control size */}
+                  <div className="p-4">
+                    <PieChart data={graphDataExternal} />
+                  </div>
+                </div>
+                <div className="flex-1 text-center mx-2">
+                  <h2 className="text-2xl font-bold mb-4">INSYCS</h2>
+                  <div className="p-4">
+                    <PieChart data={graphDataINSYCS} />
+                  </div>
+                </div>
+                <div className="flex-1 text-center mx-2">
+                  <h2 className="text-2xl font-bold mb-4">
+                    Compounding Interest
+                  </h2>
+                  <div className="p-4">
+                    <BarGraph periodData={periodData} />
+                  </div>
+                </div>
+              </div>
+            ) : (
+              /* Code for when the form is not collapsed, now with even spacing and smaller graphs */
+              <div className="flex flex-row justify-around items-center w-full">
+                <div className="text-center mx-2">
+                  <h2 className="text-2xl font-bold mb-4">
+                    {form.insuranceCompany === "Select"
+                      ? "Your Current Provider"
+                      : form.insuranceCompany}
+                  </h2>
+                  {/* Wrap the chart in a div with padding to control size */}
+                  <div className="p-4">
+                    <PieChart data={graphDataExternal} />
+                  </div>
+                </div>
+                <div className="text-center mx-2">
+                  <h2 className="text-2xl font-bold mb-4">INSYCS</h2>
+                  <div className="p-4">
+                    <PieChart data={graphDataINSYCS} />
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </motion.div>
