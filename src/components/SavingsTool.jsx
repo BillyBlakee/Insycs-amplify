@@ -48,9 +48,9 @@ function calculateInsuranceDataExternal(companyName, monthlyPayment) {
 }
 
 function calculateInsuranceDataINSYCS(companyName, monthlyPayment) {
-  const companyExpenses = monthlyPayment * 0.005;
+  const companyProfit = monthlyPayment * 0.005;
   const claimPayout = monthlyPayment * 0.995;
-  const companyProfit = 0.0;
+  const companyExpenses = 0.0;
 
   return {
     companyExpenses,
@@ -143,10 +143,11 @@ const SavingsTool = () => {
     });
 
     setPeriodData(() => {
-      return Array.from(
-        { length: 120 },
-        (_, i) => form.monthlyPayment * (1 + 0.00911) ** (i + 1)
-      );
+      let accumulatedValue = 0;
+      return Array.from({ length: 120 }, (_, i) => {
+        accumulatedValue += form.monthlyPayment * (1 + 0.00911) ** i;
+        return accumulatedValue;
+      });
     });
 
     console.log(form.insuranceCompany);
@@ -275,7 +276,7 @@ const SavingsTool = () => {
                 </div>
                 <div className="flex-1 text-center mx-2">
                   <h2 className="text-2xl font-bold mb-4">
-                    Compounding Interest
+                    Compounding Interest With INSYCS
                   </h2>
                   <div className="p-4">
                     <BarGraph periodData={periodData} />
