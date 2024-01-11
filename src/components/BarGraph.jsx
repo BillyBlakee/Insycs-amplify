@@ -17,7 +17,7 @@ const BarGraph = ({ periodData }) => {
     labels: periodData.map((_, index) => `Month ${index + 1}`),
     datasets: [
       {
-        label: "Compounding Data",
+        label: "INSYCS Account",
         data: periodData,
         backgroundColor: "rgba(75,192,192,0.6)",
         borderColor: "rgba(75,192,192,1)",
@@ -30,6 +30,11 @@ const BarGraph = ({ periodData }) => {
     scales: {
       y: {
         beginAtZero: true,
+        ticks: {
+          callback: function (value, index, values) {
+            return "$" + value.toLocaleString();
+          },
+        },
       },
     },
     title: {
@@ -41,7 +46,7 @@ const BarGraph = ({ periodData }) => {
 
   return (
     <div
-      className={`bg-[#bbcee2] rounded-2xl sm:px-2 px-3 sm:py-2`}
+      className={`bg-[#bbcee2] rounded-2xl sm:px-2 px-3 sm:py-2 w-full h-full`}
     >
       <Bar data={chartData} options={options} />
     </div>

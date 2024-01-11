@@ -12,6 +12,7 @@ import {
   Vision,
   Experience,
   HomeCommercialInfo,
+  Footer,
 } from "./components";
 
 const App = () => {
@@ -45,6 +46,7 @@ const App = () => {
           <Contact />
         </div>
       </div>
+      <Footer />
     </BrowserRouter>
   );
 };

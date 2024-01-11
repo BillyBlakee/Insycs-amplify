@@ -71,4 +71,4 @@ const HomeCommercialInfo = () => {
   );
 };
 
-export default SectionWrapper(HomeCommercialInfo, "HomeCommercialInfo");
+export default SectionWrapper(HomeCommercialInfo, "market");

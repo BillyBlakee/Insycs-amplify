@@ -171,9 +171,9 @@ const SavingsTool = () => {
         className="flex flex-col flex-[0.5] lg:flex-[0.75] bg-primary-complement rounded-2xl"
       >
         <div className={`bg-[#e5e9f0] rounded-2xl ${styles.padding}`}>
-          <h3 className="text-center text-tertiary font-black text-[40px] lg:text-[40px] sm:text-[30px] xs:text-[20px]">
-            Where does your insurance payment go?
-          </h3>
+          <h2 className="text-tertiary font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px] text-center">
+            Where Does Your Money Go?
+          </h2>
         </div>
         <div className="px-5 lg:px-5 py-3 flex flex-col lg:flex-row w-full">
           <div className="flex items-center">
@@ -259,24 +259,26 @@ const SavingsTool = () => {
             {isFormCollapsed ? (
               /* When the form is collapsed, the graphs should be smaller and evenly spaced. */
               <div className="flex flex-row justify-around items-center w-full">
-                <div className="flex-1 text-center mx-2">
+                <div className="text-center mx-2">
                   <h2 className="text-2xl font-bold mb-4">
-                    Your Current Provider
+                    {form.insuranceCompany === "Select"
+                      ? "Your Current Provider"
+                      : form.insuranceCompany}
                   </h2>
                   {/* Wrap the chart in a div with padding to control size */}
-                  <div className="p-4">
+                  <div className="p-4 max-w-[300px] mx-auto">
                     <PieChart data={graphDataExternal} />
                   </div>
                 </div>
-                <div className="flex-1 text-center mx-2">
+                <div className="text-center mx-2">
                   <h2 className="text-2xl font-bold mb-4">INSYCS</h2>
-                  <div className="p-4">
+                  <div className="p-4 max-w-[300px] mx-auto">
                     <PieChart data={graphDataINSYCS} />
                   </div>
                 </div>
                 <div className="flex-1 text-center mx-2">
                   <h2 className="text-2xl font-bold mb-4">
-                    Compounding Interest With INSYCS
+                    Your Insurance Asset
                   </h2>
                   <div className="p-4">
                     <BarGraph periodData={periodData} />

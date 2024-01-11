@@ -10,6 +10,7 @@ import SavingsTool from './SavingsTool';
 import Alert from './Alert';
 import Experience from './Experience';
 import HomeCommercialInfo from './HomeCommercialInfo';
+import Footer from './Footer';
 
 export {
   Hero,
@@ -23,5 +24,6 @@ export {
   SavingsTool,
   Alert,
   Experience,
-  HomeCommercialInfo
+  HomeCommercialInfo,
+  Footer
 }
