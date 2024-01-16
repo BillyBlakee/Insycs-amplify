@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter } from "react-router-dom";
 
 import {
@@ -16,6 +17,19 @@ import {
 } from "./components";
 
 const App = () => {
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth > 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth > 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
     <BrowserRouter>
       <div className="relative z-0 bg-background">
@@ -32,10 +46,7 @@ const App = () => {
         </div>
         <About />
         <HomeCommercialInfo />
-        {/* <div className="w-full">
-          <SolutionsText />
-        </div> */}
-        <SavingsTool />
+        {isDesktop && <SavingsTool />}
         <div className="w-full bg-[#010B15] bg-cover">
           <Vision />
         </div>

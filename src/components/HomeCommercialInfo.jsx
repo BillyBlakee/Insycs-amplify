@@ -59,7 +59,7 @@ const HomeCommercialInfo = () => {
         </motion.div>
       </div>
       <div
-        className={`sm:-mt-20 mt-5 pb-14 ${styles.paddingX} flex flex-wrap gap-7 justify-center`}
+        className={`lg:-mt-20 lg:px-4 mt-5 pb-14 sm:px-16 px-6 flex flex-wrap gap-7 justify-center lg:w-3/4 mx-auto`}
       >
         {insuranceDomainInfo
           .filter((info) => info.insuranceType === insuranceType)

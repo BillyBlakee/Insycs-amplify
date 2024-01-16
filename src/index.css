@@ -17,6 +17,10 @@
   margin-left: 0px;
 }
 
+.team-card-small {
+  transform: scale(0.8);
+}
+
 .vertical-timeline::before {
   background: #DC3C0C; /* Replace #yourColor with the color you want */
 }
