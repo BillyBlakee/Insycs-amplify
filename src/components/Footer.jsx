@@ -10,12 +10,7 @@ const Footer = () => {
         </div>
         <div>
           <p>INSYCS Insurance &copy; 2023-2024</p>
-          <a
-            href="mailto:dylan@gmail.com"
-            className="underline text-text-color"
-          >
-            dylan@gmail.com
-          </a>
+          <p className='text-sm'>All rights reserved</p>
         </div>
       </div>
     </div>
